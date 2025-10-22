@@ -34,10 +34,13 @@ resource "openstack_compute_instance_v2" "vms" {
   network {
     uuid = data.openstack_networking_network_v2.existing.id
   }
+  user_data = file(coalesce(each.value.user_data_file, "${path.module}/../../scripts/user_data.sh"))
+
+
 
   # Run SSH setup script
   #user_data = file("${path.module}/../../scripts/setup_ssh_user.sh")
-  user_data = file("${path.module}/../../scripts/user_data.sh")
+#  user_data = file("${path.module}/../../scripts/user_data.sh")
 #  user_data = join("\n", [
 #  file("${path.module}/../../scripts/setup_openssh.sh"),
 #  file("${path.module}/../../scripts/setup_ssh_user.sh"),
@@ -58,6 +61,8 @@ resource "openstack_blockstorage_volume_v3" "volumes" {
   name        = "${each.value.name}-volume"
   size        = lookup(each.value, "volume_size", 10)
   description = "Attached volume for ${each.value.name}"
+  volume_type = lookup(each.value, "volume_type", null)
+  
 }
 
 resource "openstack_compute_volume_attach_v2" "attach" {
@@ -78,24 +83,7 @@ resource "openstack_compute_floatingip_associate_v2" "fip_assoc" {
   for_each       = var.vms
   floating_ip    = openstack_networking_floatingip_v2.fips[each.key].address
   instance_id    = openstack_compute_instance_v2.vms[each.key].id
-  depends_on     = [openstack_compute_instance_v2.vms]
+  #depends_on     = [openstack_compute_instance_v2.vms]
+  depends_on = [openstack_compute_volume_attach_v2.attach]
 }
 
-###############################################
-# Outputs
-###############################################
-output "vm_ips" {
-  description = "VM names and Floating IPs"
-  value = {
-    for name, fip in openstack_networking_floatingip_v2.fips :
-    name => fip.address
-  }
-}
-
-output "volume_ids" {
-  description = "Volume IDs attached to VMs"
-  value = {
-    for name, vol in openstack_blockstorage_volume_v3.volumes :
-    name => vol.id
-  }
-}

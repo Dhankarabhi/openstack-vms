@@ -11,10 +11,3 @@ module "vms" {
   vms                  = var.vms
 }
 
-output "dev_vm_fips" {
-  value = module.vms.vm_floating_ips
-}
-
-output "dev_volumes" {
-  value = module.vms.volumes
-}

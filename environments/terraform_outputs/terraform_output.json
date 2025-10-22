@@ -1,0 +1,144 @@
+{
+  "awx_inventory_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/awx_inventory.ini"
+  },
+  "dev_vm_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "volume_id": "string"
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "volume_id": "string"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "volume_id": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "fip": "172.20.0.178",
+        "flavor": "m1.medium",
+        "id": "ce7118c3-0f10-49cf-9bf3-915960fe9682",
+        "name": "dev-web-1",
+        "power_state": "active",
+        "volume_id": "609496ab-4105-4928-999b-79f4d158a64f"
+      },
+      "web2": {
+        "fip": "172.20.0.198",
+        "flavor": "m1.medium",
+        "id": "eeaf5cfe-2dc1-4e6a-a79c-c248e3f3baf6",
+        "name": "dev-web-2",
+        "power_state": "active",
+        "volume_id": "73ba1643-54be-4dd9-813e-4e2acbf8cc34"
+      },
+      "web3": {
+        "fip": "172.20.0.187",
+        "flavor": "m1.medium",
+        "id": "435e3879-4d59-4461-a13f-2fc3ec376027",
+        "name": "dev-web-3",
+        "power_state": "active",
+        "volume_id": "b8d73900-eda1-4835-abaa-d0a2dcb95279"
+      }
+    }
+  },
+  "dev_vm_fips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": "string",
+        "web2": "string",
+        "web3": "string"
+      }
+    ],
+    "value": {
+      "web1": "172.20.0.178",
+      "web2": "172.20.0.198",
+      "web3": "172.20.0.187"
+    }
+  },
+  "dev_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number"
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "id": "609496ab-4105-4928-999b-79f4d158a64f",
+        "name": "dev-web-1-volume",
+        "size": 15
+      },
+      "web2": {
+        "id": "73ba1643-54be-4dd9-813e-4e2acbf8cc34",
+        "name": "dev-web-2-volume",
+        "size": 30
+      },
+      "web3": {
+        "id": "b8d73900-eda1-4835-abaa-d0a2dcb95279",
+        "name": "dev-web-3-volume",
+        "size": 20
+      }
+    }
+  },
+  "terraform_outputs_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/terraform_output.json"
+  }
+}

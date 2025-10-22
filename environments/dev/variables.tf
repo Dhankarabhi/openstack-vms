@@ -31,6 +31,11 @@ variable "vms" {
     flavor          = string
     image           = string
     security_groups = list(string)
-    volume_size     = optional(number, 10)
+    volume_size     = optional(number, 10)  
+    volume_type       = optional(string)       # optional, future flexibility
+    user_data_file    = optional(string)       # optional per-VM init script
+    network_name      = optional(string)       # optional network override
+    availability_zone = optional(string)       # optional AZ
+
   }))
 }

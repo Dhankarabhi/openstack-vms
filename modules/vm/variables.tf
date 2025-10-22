@@ -26,5 +26,11 @@ variable "vms" {
     image           = string
     security_groups = list(string)
     volume_size     = optional(number, 10)
+    volume_type       = optional(string)
+    user_data_file    = optional(string)
+    network_name      = optional(string)
+    availability_zone = optional(string)
+  
+
   }))
 }

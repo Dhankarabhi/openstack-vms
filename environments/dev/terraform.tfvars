@@ -11,6 +11,7 @@ vms = {
     image           = "xubuntu"
     security_groups = ["default"]
     volume_size     = 15
+    user_data_file  = "../../scripts/create_user.sh"
   }
   web2 = {
     name            = "dev-web-2"
