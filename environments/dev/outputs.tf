@@ -22,8 +22,15 @@ output "dev_vm_details" {
 ############################################################
 
 resource "null_resource" "save_outputs" {
+  # Ensure this runs after all VMs and their floating IPs are ready
+  depends_on = [
+    module.vms
+  ]
+
   triggers = {
     always_run = timestamp()  # ensures it runs every apply
+    # Add a trigger based on the actual floating IPs to ensure they exist
+    vm_fips = jsonencode(module.vms.vm_fips)
   }
 
   provisioner "local-exec" {
@@ -49,9 +56,11 @@ EOT
 output "terraform_outputs_file" {
   description = "Path to stored Terraform outputs JSON"
   value       = "${path.module}/../terraform_outputs/terraform_output.json"
+  depends_on  = [null_resource.save_outputs]
 }
 
 output "awx_inventory_file" {
   description = "Path to generated AWX inventory file"
   value       = "${path.module}/../terraform_outputs/awx_inventory.ini"
+  depends_on  = [null_resource.save_outputs]
 }
