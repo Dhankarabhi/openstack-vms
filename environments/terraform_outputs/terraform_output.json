@@ -1,0 +1,114 @@
+{
+  "awx_inventory_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/awx_inventory.ini"
+  },
+  "dev_vm_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web2": [
+          "object",
+          {
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string",
+            "volume_id": "string"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string",
+            "volume_id": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web2": {
+        "fip": "165.99.104.157",
+        "flavor": "m1.medium",
+        "id": "cace9868-7b2f-492c-a094-5e23a210d543",
+        "name": "dev-web-2",
+        "power_state": "active",
+        "private_ip": "192.168.0.120",
+        "volume_id": "d5d884cb-f8db-4094-ac2d-c8f083517bb3"
+      },
+      "web3": {
+        "fip": "165.99.104.152",
+        "flavor": "m1.medium",
+        "id": "355aa36c-d21c-459c-9c5b-f3e098cea5ac",
+        "name": "dev-web-3",
+        "power_state": "active",
+        "private_ip": "192.168.0.185",
+        "volume_id": "5d144dc4-d73f-4def-8f8f-5c99038acc08"
+      }
+    }
+  },
+  "dev_vm_fips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web2": "string",
+        "web3": "string"
+      }
+    ],
+    "value": {
+      "web2": "165.99.104.157",
+      "web3": "165.99.104.152"
+    }
+  },
+  "dev_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web2": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web2": {
+        "id": "d5d884cb-f8db-4094-ac2d-c8f083517bb3",
+        "name": "dev-web-2-volume",
+        "size": 30
+      },
+      "web3": {
+        "id": "5d144dc4-d73f-4def-8f8f-5c99038acc08",
+        "name": "dev-web-3-volume",
+        "size": 20
+      }
+    }
+  },
+  "terraform_outputs_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/terraform_output.json"
+  }
+}
