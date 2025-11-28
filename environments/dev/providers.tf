@@ -9,5 +9,5 @@ terraform {
 }
 
 provider "openstack" {
-  cloud = "openstack"  # matches clouds.yaml
+  cloud = "mycloud"  # matches clouds.yaml
 }

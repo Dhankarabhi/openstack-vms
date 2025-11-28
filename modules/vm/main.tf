@@ -27,10 +27,11 @@ resource "openstack_compute_instance_v2" "vms" {
 
   name            = each.value.name
   flavor_name     = each.value.flavor
-  image_name      = each.value.image
-  key_pair        = var.keypair_name
+#  image_name      = each.value.image
+#  key_pair        = var.keypair_name
+  key_pair        = coalesce(each.value.keypair, var.keypair_name)
   security_groups = each.value.security_groups
-
+  image_name = try(each.value.boot_from_volume, false) ? null : each.value.image
   network {
     uuid = data.openstack_networking_network_v2.existing.id
   }
@@ -49,6 +50,19 @@ resource "openstack_compute_instance_v2" "vms" {
 
   metadata = {
     environment = var.environment
+  }
+
+
+# Boot from volume configuration
+  dynamic "block_device" {
+    for_each = try(each.value.boot_from_volume, false) ? [1] : []
+    content {
+      uuid                  = each.value.boot_volume_id
+      source_type           = "volume"
+      destination_type      = "volume"
+      boot_index            = 0
+      delete_on_termination = false
+    }
   }
 }
 

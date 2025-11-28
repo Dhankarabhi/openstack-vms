@@ -29,8 +29,12 @@ variable "vms" {
   type = map(object({
     name            = string
     flavor          = string
-    image           = string
+#    image           = string
+    image             = optional(string)
+    boot_from_volume  = optional(bool, false)
+    boot_volume_id    = optional(string)
     security_groups = list(string)
+    keypair           = optional(string) 
     volume_size     = optional(number, 10)  
     volume_type       = optional(string)       # optional, future flexibility
     user_data_file    = optional(string)       # optional per-VM init script
