@@ -7,14 +7,29 @@ output "dev_vm_fips" {
   value       = module.vms.vm_fips
 }
 
-output "dev_volumes" {
-  description = "Volume details attached to VMs"
-  value       = module.vms.volumes
+output "dev_boot_volumes" {
+  description = "Boot volume details for snapshot/clone-based VMs"
+  value       = module.vms.boot_volumes
+}
+
+output "dev_data_volumes" {
+  description = "Data volume details attached to VMs"
+  value       = module.vms.data_volumes
+}
+
+output "dev_data_volumes_by_vm" {
+  description = "Data volumes grouped by VM"
+  value       = module.vms.data_volumes_by_vm
 }
 
 output "dev_vm_details" {
-  description = "Detailed VM information including IP, volume, flavor, and status"
+  description = "Detailed VM information including IP, volumes, flavor, and status"
   value       = module.vms.vm_details
+}
+
+output "dev_vm_storage_summary" {
+  description = "Storage summary per VM"
+  value       = module.vms.vm_storage_summary
 }
 
 ############################################################
@@ -22,14 +37,12 @@ output "dev_vm_details" {
 ############################################################
 
 resource "null_resource" "save_outputs" {
-  # Ensure this runs after all VMs and their floating IPs are ready
   depends_on = [
     module.vms
   ]
 
   triggers = {
-    always_run = timestamp()  # ensures it runs every apply
-    # Add a trigger based on the actual floating IPs to ensure they exist
+    always_run = timestamp()
     vm_fips = jsonencode(module.vms.vm_fips)
   }
 
@@ -64,4 +77,3 @@ output "awx_inventory_file" {
   value       = "${path.module}/../terraform_outputs/awx_inventory.ini"
   depends_on  = [null_resource.save_outputs]
 }
-

@@ -9,5 +9,6 @@ module "vms" {
   external_network_name = var.external_network_name
   keypair_name         = var.keypair_name
   vms                  = var.vms
+  use_existing_network = true
 }
 

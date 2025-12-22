@@ -1,8 +1,7 @@
-
 variable "openstack_cloud" {
   description = "Name of the OpenStack cloud to use (from clouds.yaml)"
   type        = string
-  default     = "dev" # change as needed or override in terraform.tfvars
+  default     = "dev"
 }
 
 variable "environment" {
@@ -26,20 +25,37 @@ variable "keypair_name" {
 }
 
 variable "vms" {
+  description = "Map of VMs with flexible boot and storage options"
   type = map(object({
+    # Basic VM configuration
     name            = string
     flavor          = string
-#    image           = string
-    image             = optional(string)
-    boot_from_volume  = optional(bool, false)
-    boot_volume_id    = optional(string)
     security_groups = list(string)
-    keypair           = optional(string) 
-    volume_size     = optional(number, 10)  
-    volume_type       = optional(string)       # optional, future flexibility
-    user_data_file    = optional(string)       # optional per-VM init script
-    network_name      = optional(string)       # optional network override
-    availability_zone = optional(string)       # optional AZ
+    keypair         = optional(string)
+    
+    # Boot options (choose ONE)
+    image             = optional(string)
+    boot_snapshot_id  = optional(string)
+    source_volume_id  = optional(string)
+    boot_volume_id    = optional(string)
+    
+    # Boot volume configuration
+    boot_volume_size  = optional(number, 50)
+    delete_boot_volume_on_termination = optional(bool, false)
+    
+    # Multiple data volumes configuration
+    data_volumes = optional(list(object({
+      size        = number
+      description = optional(string)
+      volume_type = optional(string)
+      device      = optional(string)
+    })), [])
+    
+    # Other options
+    volume_type       = optional(string)
+    user_data_file    = optional(string)
+    network_name      = optional(string)
+    availability_zone = optional(string)
     assign_fip        = optional(bool, false)
   }))
 }

@@ -4,139 +4,949 @@
     "type": "string",
     "value": "./../terraform_outputs/awx_inventory.ini"
   },
-  "dev_vm_details": {
+  "dev_boot_volumes": {
     "sensitive": false,
     "type": [
       "object",
       {
-        "web1": [
+        "vm7": [
           "object",
           {
-            "fip": "string",
-            "flavor": "string",
             "id": "string",
             "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
-          }
-        ],
-        "web2": [
-          "object",
-          {
-            "fip": "dynamic",
-            "flavor": "string",
-            "id": "string",
-            "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
-          }
-        ],
-        "web3": [
-          "object",
-          {
-            "fip": "dynamic",
-            "flavor": "string",
-            "id": "string",
-            "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
-          }
-        ],
-        "web4": [
-          "object",
-          {
-            "fip": "dynamic",
-            "flavor": "string",
-            "id": "string",
-            "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
-          }
-        ],
-        "web5": [
-          "object",
-          {
-            "fip": "dynamic",
-            "flavor": "string",
-            "id": "string",
-            "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
-          }
-        ],
-        "web7": [
-          "object",
-          {
-            "fip": "dynamic",
-            "flavor": "string",
-            "id": "string",
-            "name": "string",
-            "power_state": "string",
-            "private_ip": "string",
-            "volume_id": "string"
+            "size": "number",
+            "type": "string"
           }
         ]
       }
     ],
     "value": {
-      "web1": {
-        "fip": "165.99.104.157",
+      "vm7": {
+        "id": "1105e72c-74fa-44bf-a6a5-e1f327c5bfc4",
+        "name": "boot-vol-boot",
+        "size": 30,
+        "type": "boot"
+      }
+    }
+  },
+  "dev_data_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "vm1-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm12-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm2-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm3-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm4-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm5-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm6-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm7-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ],
+        "vm8-data-0": [
+          "object",
+          {
+            "device": "dynamic",
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string",
+            "vm_name": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "vm1-data-0": {
+        "device": null,
+        "id": "bbb5b1a3-74e6-40ba-9309-0ab2c98452ea",
+        "name": "web-server-subnet1-data-vm1-data-0",
+        "size": 30,
+        "type": "data",
+        "vm_key": "vm1",
+        "vm_name": "web-server-subnet1"
+      },
+      "vm12-data-0": {
+        "device": null,
+        "id": "0fd45a6f-8706-4294-a80c-1b8cd4e83354",
+        "name": "test-data-vm12-data-0",
+        "size": 50,
+        "type": "data",
+        "vm_key": "vm12",
+        "vm_name": "test"
+      },
+      "vm2-data-0": {
+        "device": null,
+        "id": "f60a9ddd-696e-4ccd-aaec-c4a876037942",
+        "name": "app-server-subnet2-data-vm2-data-0",
+        "size": 30,
+        "type": "data",
+        "vm_key": "vm2",
+        "vm_name": "app-server-subnet2"
+      },
+      "vm3-data-0": {
+        "device": null,
+        "id": "692ead47-2f88-4fe8-b6bc-984c7f69e714",
+        "name": "db-server-subnet3-data-vm3-data-0",
+        "size": 100,
+        "type": "data",
+        "vm_key": "vm3",
+        "vm_name": "db-server-subnet3"
+      },
+      "vm4-data-0": {
+        "device": null,
+        "id": "ded2e701-1f2c-4f37-8db1-373960c6ae42",
+        "name": "cache-server-subnet4-data-vm4-data-0",
+        "size": 50,
+        "type": "data",
+        "vm_key": "vm4",
+        "vm_name": "cache-server-subnet4"
+      },
+      "vm5-data-0": {
+        "device": null,
+        "id": "122bbb76-6924-4d31-9872-6a49700ca657",
+        "name": "monitoring-subnet5-data-vm5-data-0",
+        "size": 40,
+        "type": "data",
+        "vm_key": "vm5",
+        "vm_name": "monitoring-subnet5"
+      },
+      "vm6-data-0": {
+        "device": null,
+        "id": "72bc2f98-fbc6-4b69-a3d5-e83908e559e3",
+        "name": "monitoring-subnet6-data-vm6-data-0",
+        "size": 40,
+        "type": "data",
+        "vm_key": "vm6",
+        "vm_name": "monitoring-subnet6"
+      },
+      "vm7-data-0": {
+        "device": null,
+        "id": "97aa67ce-7c2b-4885-bbf2-fd8419c9f5b7",
+        "name": "boot-vol-data-vm7-data-0",
+        "size": 30,
+        "type": "data",
+        "vm_key": "vm7",
+        "vm_name": "boot-vol"
+      },
+      "vm8-data-0": {
+        "device": null,
+        "id": "a7d86f86-468b-49c1-a5d1-9a4cb593090f",
+        "name": "net2-data-vm8-data-0",
+        "size": 50,
+        "type": "data",
+        "vm_key": "vm8",
+        "vm_name": "net2"
+      }
+    }
+  },
+  "dev_data_volumes_by_vm": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "vm1": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm12": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm2": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm3": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm4": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm5": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm6": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm7": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "vm8": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "vm1": {
+        "vm_name": "web-server-subnet1",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "bbb5b1a3-74e6-40ba-9309-0ab2c98452ea",
+            "name": "web-server-subnet1-data-vm1-data-0",
+            "size": 30
+          }
+        ]
+      },
+      "vm12": {
+        "vm_name": "test",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "0fd45a6f-8706-4294-a80c-1b8cd4e83354",
+            "name": "test-data-vm12-data-0",
+            "size": 50
+          }
+        ]
+      },
+      "vm2": {
+        "vm_name": "app-server-subnet2",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "f60a9ddd-696e-4ccd-aaec-c4a876037942",
+            "name": "app-server-subnet2-data-vm2-data-0",
+            "size": 30
+          }
+        ]
+      },
+      "vm3": {
+        "vm_name": "db-server-subnet3",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "692ead47-2f88-4fe8-b6bc-984c7f69e714",
+            "name": "db-server-subnet3-data-vm3-data-0",
+            "size": 100
+          }
+        ]
+      },
+      "vm4": {
+        "vm_name": "cache-server-subnet4",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "ded2e701-1f2c-4f37-8db1-373960c6ae42",
+            "name": "cache-server-subnet4-data-vm4-data-0",
+            "size": 50
+          }
+        ]
+      },
+      "vm5": {
+        "vm_name": "monitoring-subnet5",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "122bbb76-6924-4d31-9872-6a49700ca657",
+            "name": "monitoring-subnet5-data-vm5-data-0",
+            "size": 40
+          }
+        ]
+      },
+      "vm6": {
+        "vm_name": "monitoring-subnet6",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "72bc2f98-fbc6-4b69-a3d5-e83908e559e3",
+            "name": "monitoring-subnet6-data-vm6-data-0",
+            "size": 40
+          }
+        ]
+      },
+      "vm7": {
+        "vm_name": "boot-vol",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "97aa67ce-7c2b-4885-bbf2-fd8419c9f5b7",
+            "name": "boot-vol-data-vm7-data-0",
+            "size": 30
+          }
+        ]
+      },
+      "vm8": {
+        "vm_name": "net2",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "device": null,
+            "id": "a7d86f86-468b-49c1-a5d1-9a4cb593090f",
+            "name": "net2-data-vm8-data-0",
+            "size": 50
+          }
+        ]
+      }
+    }
+  },
+  "dev_vm_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "vm1": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm12": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm2": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm3": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "dynamic",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm4": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "dynamic",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm5": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm6": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm7": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "vm8": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "device": "dynamic",
+                    "id": "string",
+                    "name": "string",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "dynamic",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "vm1": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "bbb5b1a3-74e6-40ba-9309-0ab2c98452ea",
+            "name": "web-server-subnet1-data-vm1-data-0",
+            "size": 30
+          }
+        ],
+        "fip": "172.20.1.197",
         "flavor": "m1.medium",
-        "id": "acfe6c99-f722-4f75-857a-88547638df40",
-        "name": "open-vpn",
+        "id": "7b9d90b0-ec76-4ceb-bb83-b6ba93c2f42f",
+        "name": "web-server-subnet1",
         "power_state": "active",
-        "private_ip": "192.168.200.33",
-        "volume_id": "7f4c89aa-d81f-4b43-b56f-cef98aa4d6e5"
+        "private_ip": "10.10.1.32"
       },
-      "web2": {
+      "vm12": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "0fd45a6f-8706-4294-a80c-1b8cd4e83354",
+            "name": "test-data-vm12-data-0",
+            "size": 50
+          }
+        ],
+        "fip": "172.20.1.103",
+        "flavor": "m1.large",
+        "id": "1df48f36-5349-402f-a3ab-9c5cbcb06902",
+        "name": "test",
+        "power_state": "active",
+        "private_ip": "10.20.3.201"
+      },
+      "vm2": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "f60a9ddd-696e-4ccd-aaec-c4a876037942",
+            "name": "app-server-subnet2-data-vm2-data-0",
+            "size": 30
+          }
+        ],
+        "fip": "172.20.1.108",
+        "flavor": "m1.medium",
+        "id": "aaed6bdd-34f3-4f1f-8e08-79fb4a896716",
+        "name": "app-server-subnet2",
+        "power_state": "active",
+        "private_ip": "10.10.2.50"
+      },
+      "vm3": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "692ead47-2f88-4fe8-b6bc-984c7f69e714",
+            "name": "db-server-subnet3-data-vm3-data-0",
+            "size": 100
+          }
+        ],
         "fip": null,
         "flavor": "m1.large",
-        "id": "0cf3ac94-14b1-45d9-ad8f-ab3db48b0735",
-        "name": "wazuh-master-1",
+        "id": "5da8247a-c803-4a1c-bd57-73a1f3a89444",
+        "name": "db-server-subnet3",
         "power_state": "active",
-        "private_ip": "192.168.200.146",
-        "volume_id": "fb2701a6-1fe6-4190-8780-013579c7b4d3"
+        "private_ip": "10.10.3.133"
       },
-      "web3": {
+      "vm4": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "ded2e701-1f2c-4f37-8db1-373960c6ae42",
+            "name": "cache-server-subnet4-data-vm4-data-0",
+            "size": 50
+          }
+        ],
         "fip": null,
-        "flavor": "m1.large",
-        "id": "953b5144-5de0-4282-8d00-7e47a3c99a0c",
-        "name": "wazuh-worker-1",
+        "flavor": "m1.small",
+        "id": "58381b9b-dc1a-4748-9b31-434ca5f88b41",
+        "name": "cache-server-subnet4",
         "power_state": "active",
-        "private_ip": "192.168.200.106",
-        "volume_id": "02c58b05-5168-4f7b-b727-52d5d123a02d"
+        "private_ip": "10.10.4.100"
       },
-      "web4": {
-        "fip": null,
-        "flavor": "m1.large",
-        "id": "0cad52a0-3651-46cf-9972-9f8a57005646",
-        "name": "wazuh-worker-2",
+      "vm5": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "122bbb76-6924-4d31-9872-6a49700ca657",
+            "name": "monitoring-subnet5-data-vm5-data-0",
+            "size": 40
+          }
+        ],
+        "fip": "172.20.1.90",
+        "flavor": "m1.medium",
+        "id": "089b6c1b-37c5-4181-9e8c-fc98f6b00c8d",
+        "name": "monitoring-subnet5",
         "power_state": "active",
-        "private_ip": "192.168.200.9",
-        "volume_id": "cdf5b497-0a70-4918-90a6-f1af8466aefa"
+        "private_ip": "10.10.5.158"
       },
-      "web5": {
-        "fip": null,
-        "flavor": "m1.large",
-        "id": "d0b7e8b9-c987-4f0d-8bd5-49188725a991",
-        "name": "wazuh-worker-3",
+      "vm6": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "72bc2f98-fbc6-4b69-a3d5-e83908e559e3",
+            "name": "monitoring-subnet6-data-vm6-data-0",
+            "size": 40
+          }
+        ],
+        "fip": "172.20.1.36",
+        "flavor": "m1.medium",
+        "id": "44032b6c-2fb4-4a26-acfc-9d8fb8ebb95b",
+        "name": "monitoring-subnet6",
         "power_state": "active",
-        "private_ip": "192.168.200.61",
-        "volume_id": "ae51d2a1-7a82-417f-90b9-c98cfdd5f91e"
+        "private_ip": "10.10.2.149"
       },
-      "web7": {
-        "fip": null,
-        "flavor": "m1.large",
-        "id": "b880da2d-a810-40ee-9d1f-db5367750226",
-        "name": "docker-center",
+      "vm7": {
+        "boot_volume_id": "1105e72c-74fa-44bf-a6a5-e1f327c5bfc4",
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "97aa67ce-7c2b-4885-bbf2-fd8419c9f5b7",
+            "name": "boot-vol-data-vm7-data-0",
+            "size": 30
+          }
+        ],
+        "fip": "172.20.1.115",
+        "flavor": "m1.medium",
+        "id": "da74ebcc-7f20-4c9b-9861-e215f812ff6d",
+        "name": "boot-vol",
         "power_state": "active",
-        "private_ip": "192.168.200.6",
-        "volume_id": "c7c85660-6c7f-4aea-9d64-7adf82628fcd"
+        "private_ip": "10.10.3.163"
+      },
+      "vm8": {
+        "boot_volume_id": null,
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "device": null,
+            "id": "a7d86f86-468b-49c1-a5d1-9a4cb593090f",
+            "name": "net2-data-vm8-data-0",
+            "size": 50
+          }
+        ],
+        "fip": null,
+        "flavor": "m1.medium",
+        "id": "12aa93cc-7ccd-4876-bb25-9f994ef0b1e9",
+        "name": "net2",
+        "power_state": "active",
+        "private_ip": "10.20.1.50"
       }
     }
   },
@@ -145,98 +955,201 @@
     "type": [
       "object",
       {
-        "web1": "string"
+        "vm1": "string",
+        "vm12": "string",
+        "vm2": "string",
+        "vm5": "string",
+        "vm6": "string",
+        "vm7": "string"
       }
     ],
     "value": {
-      "web1": "165.99.104.157"
+      "vm1": "172.20.1.197",
+      "vm12": "172.20.1.103",
+      "vm2": "172.20.1.108",
+      "vm5": "172.20.1.90",
+      "vm6": "172.20.1.36",
+      "vm7": "172.20.1.115"
     }
   },
-  "dev_volumes": {
+  "dev_vm_storage_summary": {
     "sensitive": false,
     "type": [
       "object",
       {
-        "web1": [
+        "vm1": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ],
-        "web2": [
+        "vm12": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ],
-        "web3": [
+        "vm2": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ],
-        "web4": [
+        "vm3": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ],
-        "web5": [
+        "vm4": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ],
-        "web7": [
+        "vm5": [
           "object",
           {
-            "id": "string",
-            "name": "string",
-            "size": "number"
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "vm6": [
+          "object",
+          {
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "vm7": [
+          "object",
+          {
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "vm8": [
+          "object",
+          {
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
           }
         ]
       }
     ],
     "value": {
-      "web1": {
-        "id": "7f4c89aa-d81f-4b43-b56f-cef98aa4d6e5",
-        "name": "open-vpn-volume",
-        "size": 10
+      "vm1": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 30,
+        "total_storage": 30,
+        "vm_name": "web-server-subnet1"
       },
-      "web2": {
-        "id": "fb2701a6-1fe6-4190-8780-013579c7b4d3",
-        "name": "wazuh-master-1-volume",
-        "size": 50
+      "vm12": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 50,
+        "total_storage": 50,
+        "vm_name": "test"
       },
-      "web3": {
-        "id": "02c58b05-5168-4f7b-b727-52d5d123a02d",
-        "name": "wazuh-worker-1-volume",
-        "size": 50
+      "vm2": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 30,
+        "total_storage": 30,
+        "vm_name": "app-server-subnet2"
       },
-      "web4": {
-        "id": "cdf5b497-0a70-4918-90a6-f1af8466aefa",
-        "name": "wazuh-worker-2-volume",
-        "size": 50
+      "vm3": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 100,
+        "total_storage": 100,
+        "vm_name": "db-server-subnet3"
       },
-      "web5": {
-        "id": "ae51d2a1-7a82-417f-90b9-c98cfdd5f91e",
-        "name": "wazuh-worker-3-volume",
-        "size": 50
+      "vm4": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 50,
+        "total_storage": 50,
+        "vm_name": "cache-server-subnet4"
       },
-      "web7": {
-        "id": "c7c85660-6c7f-4aea-9d64-7adf82628fcd",
-        "name": "docker-center-volume",
-        "size": 10
+      "vm5": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 40,
+        "total_storage": 40,
+        "vm_name": "monitoring-subnet5"
+      },
+      "vm6": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 40,
+        "total_storage": 40,
+        "vm_name": "monitoring-subnet6"
+      },
+      "vm7": {
+        "boot_method": "snapshot/clone",
+        "boot_volume_size": "30",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 30,
+        "total_storage": 60,
+        "vm_name": "boot-vol"
+      },
+      "vm8": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 50,
+        "total_storage": 50,
+        "vm_name": "net2"
       }
     }
   },

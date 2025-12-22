@@ -1,0 +1,13 @@
+##############################################
+# Network Module Configuration
+##############################################
+
+module "network" {
+  source = "../../modules/network"
+
+  # Pass network configuration from variables
+  networks = var.networks
+  subnets  = var.subnets
+  routers  = var.routers
+  ports    = var.ports
+}

@@ -1,0 +1,39 @@
+##############################################
+# Network module
+##############################################
+module "network" {
+  source = "../../modules/network"
+
+  # REQUIRED
+  external_network_name = var.external_network_name
+
+  networks = var.networks
+  subnets  = var.subnets
+  routers  = var.routers
+  ports    = var.ports
+}
+
+##############################################
+# VM module (GENERIC MULTI-SUBNET SUPPORT)
+##############################################
+module "vms" {
+  source = "../../modules/vm"
+
+  environment           = var.environment
+  network_name          = var.network_name
+  external_network_name = var.external_network_name
+  keypair_name          = var.keypair_name
+
+  # 🔥 GENERIC: any VM, any number of subnets
+  vms = {
+    for vm_key, vm in var.vms :
+    vm_key => merge(vm, {
+      port_ids = [
+        for pk in coalesce(vm.port_keys, []) :
+        module.network.port_ids[pk]
+      ]
+    })
+  }
+
+  depends_on = [module.network]
+}

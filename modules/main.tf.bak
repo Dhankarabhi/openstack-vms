@@ -1,0 +1,182 @@
+terraform {
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = ">= 1.52.1"
+    }
+  }
+}
+
+###############################################
+# VM Module — With Subnet Selection Support
+###############################################
+
+# Get external network for floating IPs
+data "openstack_networking_network_v2" "external" {
+  name = var.external_network_name
+}
+
+###############################################
+# Create Boot Volumes (from snapshot/clone)
+###############################################
+resource "openstack_blockstorage_volume_v3" "boot_volumes" {
+  for_each = {
+    for key, vm in var.vms : key => vm
+    if try(vm.boot_snapshot_id, null) != null || try(vm.source_volume_id, null) != null
+  }
+
+  name          = "${each.value.name}-boot-volume"
+  size          = lookup(each.value, "boot_volume_size", 50)
+  description   = "Boot volume for ${each.value.name}"
+  snapshot_id   = lookup(each.value, "boot_snapshot_id", null)
+  source_vol_id = lookup(each.value, "source_volume_id", null)
+  volume_type   = lookup(each.value, "volume_type", null)
+  enable_online_resize = true
+}
+
+###############################################
+# Create Multiple Data Volumes per VM
+###############################################
+locals {
+  data_volumes_flat = merge([
+    for vm_key, vm in var.vms : {
+      for vol_idx, vol_config in try(vm.data_volumes, []) : 
+      "${vm_key}-data-${vol_idx}" => {
+        vm_key      = vm_key
+        vm_name     = vm.name
+        vol_idx     = vol_idx
+        size        = vol_config.size
+        description = try(vol_config.description, "Data volume ${vol_idx} for ${vm.name}")
+        volume_type = try(vol_config.volume_type, null)
+        device      = try(vol_config.device, null)
+      }
+    }
+  ]...)
+}
+
+resource "openstack_blockstorage_volume_v3" "data_volumes" {
+  for_each = local.data_volumes_flat
+
+  name        = "${each.value.vm_name}-data-volume-${each.value.vol_idx}"
+  size        = each.value.size
+  description = each.value.description
+  volume_type = each.value.volume_type
+  enable_online_resize = true  
+  lifecycle {
+    ignore_changes = []
+  }
+}
+
+###############################################
+# Create VMs with Port-based networking
+###############################################
+resource "openstack_compute_instance_v2" "vms" {
+  for_each = var.vms
+
+  name            = each.value.name
+  flavor_name     = each.value.flavor
+  key_pair        = coalesce(each.value.keypair, var.keypair_name)
+  security_groups = each.value.security_groups
+  
+  # Image only when NOT booting from volume
+  image_name = (
+    try(each.value.boot_volume_id, null) != null ||
+    try(each.value.boot_snapshot_id, null) != null ||
+    try(each.value.source_volume_id, null) != null
+  ) ? null : each.value.image
+
+  # Network configuration using port_id from network module
+  # This is the PRIMARY method for subnet-specific deployment
+  network {
+    port = each.value.port_id
+  }
+  
+  user_data = file(coalesce(each.value.user_data_file, "${path.module}/../../scripts/user_data.sh"))
+
+  metadata = {
+    environment = var.environment
+  }
+
+  # Boot from existing volume
+  dynamic "block_device" {
+    for_each = try(each.value.boot_volume_id, null) != null ? [1] : []
+    content {
+      uuid                  = each.value.boot_volume_id
+      source_type           = "volume"
+      destination_type      = "volume"
+      boot_index            = 0
+      delete_on_termination = false
+    }
+  }
+
+  # Boot from newly created volume (snapshot or clone)
+  dynamic "block_device" {
+    for_each = (
+      try(each.value.boot_snapshot_id, null) != null ||
+      try(each.value.source_volume_id, null) != null
+    ) ? [1] : []
+    content {
+      uuid                  = openstack_blockstorage_volume_v3.boot_volumes[each.key].id
+      source_type           = "volume"
+      destination_type      = "volume"
+      boot_index            = 0
+      delete_on_termination = lookup(each.value, "delete_boot_volume_on_termination", false)
+    }
+  }
+
+  ###############################################
+  # LIFECYCLE PROTECTION
+  ###############################################
+  lifecycle {
+    ignore_changes = [
+      user_data,
+      image_name,
+      image_id,
+    ]
+    prevent_destroy = false
+  }
+
+  depends_on = [
+    openstack_blockstorage_volume_v3.boot_volumes
+  ]
+}
+
+###############################################
+# Attach Multiple Data Volumes to VMs
+###############################################
+resource "openstack_compute_volume_attach_v2" "attach_data" {
+  for_each = local.data_volumes_flat
+
+  instance_id = openstack_compute_instance_v2.vms[each.value.vm_key].id
+  volume_id   = openstack_blockstorage_volume_v3.data_volumes[each.key].id
+  device      = each.value.device
+  
+  depends_on = [
+    openstack_compute_instance_v2.vms
+  ]
+}
+
+###############################################
+# Floating IP Management
+###############################################
+resource "openstack_networking_floatingip_v2" "fips" {
+  for_each = {
+    for key, vm in var.vms : key => vm
+    if try(vm.assign_fip, false) == true
+  }
+  pool = data.openstack_networking_network_v2.external.name
+}
+
+resource "openstack_compute_floatingip_associate_v2" "fip_assoc" {
+  for_each = {
+    for key, vm in var.vms : key => vm
+    if try(vm.assign_fip, false) == true
+  }
+
+  floating_ip = openstack_networking_floatingip_v2.fips[each.key].address
+  instance_id = openstack_compute_instance_v2.vms[each.key].id
+  
+  depends_on = [
+    openstack_compute_instance_v2.vms
+  ]
+}

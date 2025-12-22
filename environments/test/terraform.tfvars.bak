@@ -1,0 +1,159 @@
+environment           = "test"
+external_network_name = "public1"
+keypair_name          = "test"
+openstack_cloud       = "dell"
+
+###############################################
+# Create Network-1 with 5 Subnets
+###############################################
+
+networks = {
+  network_1 = {
+    name        = "network-1"
+    description = "Main network with multiple subnets"
+  }
+}
+
+subnets = {
+  subnet_1 = {
+    name        = "subnet-1"
+    network_key = "network_1"
+    cidr        = "10.10.1.0/24"
+    gateway_ip  = "10.10.1.1"
+#    router_key  = "main_router"
+  }
+  
+  subnet_2 = {
+    name        = "subnet-2"
+    network_key = "network_1"
+    cidr        = "10.10.2.0/24"
+    gateway_ip  = "10.10.2.1"
+#    router_key  = "main_router"
+  }
+  
+  subnet_3 = {
+    name        = "subnet-3"
+    network_key = "network_1"
+    cidr        = "10.10.3.0/24"
+    gateway_ip  = "10.10.3.1"
+#    router_key  = "main_router"
+  }
+  
+  subnet_4 = {
+    name        = "subnet-4"
+    network_key = "network_1"
+    cidr        = "10.10.4.0/24"
+    gateway_ip  = "10.10.4.1"
+#    router_key  = "main_router"
+  }
+  
+  subnet_5 = {
+    name        = "subnet-5"
+    network_key = "network_1"
+    cidr        = "10.10.5.0/24"
+    gateway_ip  = "10.10.5.1"
+#    router_key  = "main_router"
+  }
+}
+
+routers = {
+  main_router = {
+    name                = "main-router"
+ #   external_network_id = "7181cf6d-3e20-4fac-a7d1-7064e5fbb3a6"  # Replace with your ID
+    description         = "Router for network-1"
+  }
+}
+
+ports = {
+  vm1_port = {
+    name        = "vm1-port-subnet4"
+    network_key = "network_1"
+    fixed_ips = [
+      {
+        subnet_key = "subnet_1"  # VM1 will be in subnet-4
+        # ip_address = "10.0.4.100"  # Optional: specific IP
+      }
+    ]
+  }
+  vm2_port = {
+    name        = "vm2-port-subnet2"
+    network_key = "network_1"
+    fixed_ips = [
+      {
+        subnet_key = "subnet_2"  # VM2 will be in subnet-2
+        # ip_address = "10.0.2.100"  # Optional: specific IP
+      }
+    ]
+  }
+}
+# Default network for VMs
+network_name = "network-1"
+
+###############################################
+# VMs in Specific Subnets
+###############################################
+
+vms = {
+  #############################################
+  # VM1: Network-1, Subnet-4
+  #############################################
+  vm1 = {
+    name            = "vm-subnet-1"
+    flavor          = "m1.medium"
+    image           = "ubuntu"
+    security_groups = ["default"]
+    keypair         = "test"
+    assign_fip      = false
+    user_data_file  = "../../scripts/user.sh"
+    port_key = "vm1_port"
+ #   port_id         = module.network.port_ids["vm1_port"]  
+    # SPECIFY SUBNET!
+   # subnet_name     = "subnet-4"  # <-- VM will be in subnet-4
+    
+    data_volumes = [
+      { size = 10, description = "VM1 data" }
+    ]
+  }
+  
+  #############################################
+  # VM2: Network-1, Subnet-2
+  #############################################
+  vm2 = {
+    name            = "vm-subnet-2"
+    flavor          = "m1.medium"
+    image           = "ubuntu"
+    security_groups = ["default"]
+    keypair         = "test"
+    assign_fip      = false
+    user_data_file  = "../../scripts/user.sh"
+    port_key = "vm2_port"
+ #   port_id         = module.network.port_ids["vm2_port"]
+    # SPECIFY SUBNET!
+   # subnet_name     = "subnet-2"  # <-- VM will be in subnet-2
+    
+    data_volumes = [
+      { size = 20, description = "VM2 data" }
+    ]
+  }
+  
+  #############################################
+  # VM3: Network-1, Subnet-5 with Fixed IP
+  #############################################
+  vm3 = {
+    name            = "vm-subnet-5-fixed-ip"
+    flavor          = "m1.medium"
+    image           = "ubuntu"
+    security_groups = ["default"]
+    keypair         = "test"
+    assign_fip      = false
+    user_data_file  = "../../scripts/user.sh"
+    
+    # SPECIFY SUBNET + FIXED IP!
+    subnet_name     = "subnet-5"
+    fixed_ip        = "10.10.5.100"  # Specific IP in subnet-5
+    
+    data_volumes = [
+      { size = 50, description = "VM3 data" }
+    ]
+  }
+}
