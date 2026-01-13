@@ -1,0 +1,842 @@
+{
+  "awx_inventory_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/dev/awx_inventory.ini"
+  },
+  "dev_boot_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web1-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web4": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web5": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web6": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web7": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web8": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "id": "7a01041d-8c58-4c81-a765-3809892110b0",
+        "name": "jenkins-controller-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web1-1": {
+        "id": "18c764c2-93ee-471d-83d4-53fbc628bd9f",
+        "name": "jenkins-agent-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web2": {
+        "id": "28a9a036-eb82-4d5c-9332-d8977e2c148c",
+        "name": "sonar-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web3": {
+        "id": "0858b5f1-9bde-4eff-80bb-c9e737b9c3b8",
+        "name": "harbor-master-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web4": {
+        "id": "9d396888-30f9-4547-b14c-d0f46571b46f",
+        "name": "harbor-worker-1-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web5": {
+        "id": "c979a3e0-6130-494f-973d-664db0471193",
+        "name": "harbor-worker-2-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web6": {
+        "id": "8af9d236-4624-461f-9d61-ed9b44044190",
+        "name": "k8s-master-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web7": {
+        "id": "43e0ab57-7f06-4835-a525-944f06c7fd6a",
+        "name": "k8s-worker-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web8": {
+        "id": "53e8a75b-582a-499c-9ce6-3955b83eb6b4",
+        "name": "argo-cd-boot",
+        "size": 50,
+        "type": "boot"
+      }
+    }
+  },
+  "dev_data_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web4-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web5-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web4-data-0": {
+        "id": "d0a86b96-ab3d-4ff4-baa2-041d95d3126f",
+        "name": "harbor-worker-1-data-web4-data-0",
+        "size": 200,
+        "type": "data",
+        "vm_key": "web4"
+      },
+      "web5-data-0": {
+        "id": "36eea46d-0e31-44b6-a7d8-3d34c1b62926",
+        "name": "harbor-worker-2-data-web5-data-0",
+        "size": 200,
+        "type": "data",
+        "vm_key": "web5"
+      }
+    }
+  },
+  "dev_data_volumes_by_vm": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web1-1": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web4": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "web5": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "web6": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web7": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web8": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "vm_name": "jenkins-controller",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web1-1": {
+        "vm_name": "jenkins-agent",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web2": {
+        "vm_name": "sonar",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web3": {
+        "vm_name": "harbor-master",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web4": {
+        "vm_name": "harbor-worker-1",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 200
+          }
+        ]
+      },
+      "web5": {
+        "vm_name": "harbor-worker-2",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 200
+          }
+        ]
+      },
+      "web6": {
+        "vm_name": "k8s-master",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web7": {
+        "vm_name": "k8s-worker",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web8": {
+        "vm_name": "argo-cd",
+        "volume_count": 0,
+        "volumes": []
+      }
+    }
+  },
+  "dev_vm_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web1-1": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web4": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web5": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web6": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web7": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web8": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "boot_volume_id": "7a01041d-8c58-4c81-a765-3809892110b0",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.127",
+        "flavor": "m1.large",
+        "id": "6c51f09a-0b1d-455a-a338-2981dd1ea197",
+        "name": "jenkins-controller",
+        "power_state": "active",
+        "private_ip": "10.0.0.3"
+      },
+      "web1-1": {
+        "boot_volume_id": "18c764c2-93ee-471d-83d4-53fbc628bd9f",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.34",
+        "flavor": "m1.large",
+        "id": "c607c78a-c40d-4071-a5a6-3e0eef44caf4",
+        "name": "jenkins-agent",
+        "power_state": "active",
+        "private_ip": "10.0.0.126"
+      },
+      "web2": {
+        "boot_volume_id": "28a9a036-eb82-4d5c-9332-d8977e2c148c",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.140",
+        "flavor": "m1.large",
+        "id": "e35fc138-3432-4dad-8e3b-2660d81eda4b",
+        "name": "sonar",
+        "power_state": "active",
+        "private_ip": "10.0.0.85"
+      },
+      "web3": {
+        "boot_volume_id": "0858b5f1-9bde-4eff-80bb-c9e737b9c3b8",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.118",
+        "flavor": "m1.large",
+        "id": "cc4308f3-2957-4ee5-95dc-f89a390d4139",
+        "name": "harbor-master",
+        "power_state": "active",
+        "private_ip": "10.0.0.219"
+      },
+      "web4": {
+        "boot_volume_id": "9d396888-30f9-4547-b14c-d0f46571b46f",
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "size": 200
+          }
+        ],
+        "fip": "172.20.1.48",
+        "flavor": "m1.large",
+        "id": "757359b7-58b2-48b9-bcf2-720ed57e4c73",
+        "name": "harbor-worker-1",
+        "power_state": "active",
+        "private_ip": "10.0.0.58"
+      },
+      "web5": {
+        "boot_volume_id": "c979a3e0-6130-494f-973d-664db0471193",
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "size": 200
+          }
+        ],
+        "fip": "172.20.1.99",
+        "flavor": "m1.large",
+        "id": "9419bfd9-7406-4edd-9b22-f1d26609c433",
+        "name": "harbor-worker-2",
+        "power_state": "active",
+        "private_ip": "10.0.0.55"
+      },
+      "web6": {
+        "boot_volume_id": "8af9d236-4624-461f-9d61-ed9b44044190",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.83",
+        "flavor": "m1.large",
+        "id": "a4d1c7c8-c9fd-4ba3-9f00-c45bbbeb0352",
+        "name": "k8s-master",
+        "power_state": "active",
+        "private_ip": "10.0.0.172"
+      },
+      "web7": {
+        "boot_volume_id": "43e0ab57-7f06-4835-a525-944f06c7fd6a",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.79",
+        "flavor": "m1.large",
+        "id": "46597bf1-367e-4103-8ddd-c31f149cbbef",
+        "name": "k8s-worker",
+        "power_state": "active",
+        "private_ip": "10.0.0.221"
+      },
+      "web8": {
+        "boot_volume_id": "53e8a75b-582a-499c-9ce6-3955b83eb6b4",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.20",
+        "flavor": "m1.large",
+        "id": "b24780b3-b076-42c9-b6a0-7f9a50bf6f0b",
+        "name": "argo-cd",
+        "power_state": "active",
+        "private_ip": "10.0.0.75"
+      }
+    }
+  },
+  "dev_vm_fips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": "string",
+        "web1-1": "string",
+        "web2": "string",
+        "web3": "string",
+        "web4": "string",
+        "web5": "string",
+        "web6": "string",
+        "web7": "string",
+        "web8": "string"
+      }
+    ],
+    "value": {
+      "web1": "172.20.1.127",
+      "web1-1": "172.20.1.34",
+      "web2": "172.20.1.140",
+      "web3": "172.20.1.118",
+      "web4": "172.20.1.48",
+      "web5": "172.20.1.99",
+      "web6": "172.20.1.83",
+      "web7": "172.20.1.79",
+      "web8": "172.20.1.20"
+    }
+  },
+  "dev_vm_storage_summary": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web1": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web1-1": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web2": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web3": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web4": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web5": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web6": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web7": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web8": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web1": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "jenkins-controller"
+      },
+      "web1-1": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "jenkins-agent"
+      },
+      "web2": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "sonar"
+      },
+      "web3": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "harbor-master"
+      },
+      "web4": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 200,
+        "total_storage": 250,
+        "vm_name": "harbor-worker-1"
+      },
+      "web5": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 200,
+        "total_storage": 250,
+        "vm_name": "harbor-worker-2"
+      },
+      "web6": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "k8s-master"
+      },
+      "web7": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "k8s-worker"
+      },
+      "web8": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "argo-cd"
+      }
+    }
+  },
+  "terraform_outputs_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/dev/terraform_output.json"
+  }
+}

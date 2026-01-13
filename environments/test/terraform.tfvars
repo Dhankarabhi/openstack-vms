@@ -20,9 +20,11 @@ networks = {
     name        = "network-2"
     description = "Backend / DB / Restricted network"
   }
-
+  network_3 = {
+    name        =  "network-3"
+    description =  "test"
+ }
 }
-
 ###############################################
 # Subnets Configuration
 ###############################################
@@ -88,8 +90,15 @@ subnets = {
     gateway_ip  = "10.20.3.1"
     router_key  = "terra_router"
   }
-
+  subnet_9 = {
+    name        = "n3-subnet-1"
+    network_key = "network_3"
+    cidr        = "10.30.3.0/24"
+    gateway_ip  = "10.30.3.1"
+    router_key  = "terra_router"
+ }
 }
+
 
 ###############################################
 # Router Configuration
@@ -106,6 +115,11 @@ routers = {
     create       = false
     use_existing = true
   }
+  router_new  = { 
+    name         = "one-more"
+    create       = true
+    use_existing = false
+  }
 }
 
 ###############################################
@@ -117,7 +131,7 @@ ports = {
     name        = "vm1-port"
     network_key = "network_1"
     subnet_key  = "subnet_1"
-#    fixed_ip    = null
+    fixed_ip    = null
   }
   vm1_port_subnet2 = {
     name        = "vm1-subnet2-port"
@@ -129,6 +143,12 @@ ports = {
     network_key = "network_1"
     subnet_key  = "subnet_2"
     fixed_ip    = "10.10.2.50"
+  }
+  vm2_port_subnet2 = {
+    name        = "vm2-port"
+    network_key = "network_1"
+    subnet_key  = "subnet_3"
+    fixed_ip    = "10.10.3.51"
   }
 
   vm3_port = {
@@ -201,7 +221,11 @@ ports = {
     network_key = "network_1"
     subnet_key  = "subnet_4"
 }
-
+ vm13_port = {
+    name        = "vm13-port"
+    network_key = "network_3"
+    subnet_key  = "subnet_9"
+ }
 }
 
 ###############################################
@@ -219,7 +243,7 @@ vms = {
     name            = "web-server-subnet1"
     flavor          = "m1.medium"
     image           = "ubuntu"
-    security_groups = ["default"]
+    security_groups = ["default", "test-user"]
     keypair         = "test"
     assign_fip      = true
     user_data_file  = "../../scripts/user.sh"
@@ -232,7 +256,7 @@ vms = {
   }
 
   vm2 = {
-    name            = "app-server-subnet2"
+    name            = "subnet2-3"
     flavor          = "m1.medium"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -240,7 +264,7 @@ vms = {
     assign_fip      = true
     user_data_file  = "../../scripts/user.sh"
 
-    port_keys = ["vm2_port"]
+    port_keys = ["vm2_port", "vm2_port_subnet2"]
 
     data_volumes = [
       { size = 30, description = "App data" }
@@ -248,7 +272,7 @@ vms = {
   }
 
   vm3 = {
-    name            = "db-server-subnet3"
+    name            = "subnet3"
     flavor          = "m1.large"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -264,7 +288,7 @@ vms = {
   }
 
   vm4 = {
-    name            = "cache-server-subnet4"
+    name            = "subnet4"
     flavor          = "m1.small"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -280,7 +304,7 @@ vms = {
   }
 
   vm5 = {
-    name            = "monitoring-subnet5"
+    name            = "subnet5"
     flavor          = "m1.medium"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -315,7 +339,7 @@ vms = {
     ]
   }
  vm6 = {
-    name            = "monitoring-subnet6"
+    name            = "subnet-22"
     flavor          = "m1.medium"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -330,7 +354,7 @@ vms = {
     ]
   }
  vm8 = {
-    name            = "net2"
+    name            = "net3"
     flavor          = "m1.medium"
     image           = "ubuntu"
     security_groups = ["default"]
@@ -404,5 +428,20 @@ vms = {
     ]
 
   }
+ vm13 = {
+    name            = "net-3"
+    flavor          = "m1.large"
+    image           = "ubuntu"
+    security_groups = ["default"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+    port_keys = ["vm13_port"]
+    data_volumes = [
+      { size = 50, description = "Backend data" }
+    ]
+
+  }
+
 }
 

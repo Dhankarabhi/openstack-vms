@@ -22,6 +22,19 @@ module "vms" {
   source = "../../modules/vm"
 
   ###############################################
+  # 🔥 PASS PORT KEYS DIRECTLY (NOT IDs)
+  ###############################################
+#  vms = var.vms  # Just pass as-is with port_keys
+
+  ###############################################
+  # 🔥 PASS PORT ID MAPPING
+  ###############################################
+  port_id_map = module.network.port_ids
+
+  ###############################################
+
+
+  ###############################################
   # 🔥 MAP port_keys → port_ids (TEST MODE)
   ###############################################
   vms = {
@@ -36,8 +49,21 @@ module "vms" {
       )
     })
   }
-
+# vms = {
+#    for vm_key, vm in var.vms :
+#    vm_key => merge(vm, {
+      # Map port_keys to actual port IDs from network module
+#      port_ids = try(
+#        [
+#          for idx, port_key in vm.port_keys :
+#          idx => module.network.port_ids[port_key]
+#        ],
+#        null
+#      )
+#    })
+#  }
   ###############################################
+
   # COMMON INPUTS
   ###############################################
   network_name          = var.network_name

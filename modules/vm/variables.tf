@@ -24,7 +24,11 @@ variable "subnet_ids" {
   type        = map(string)
   default     = {}
 }
-
+variable "port_id_map" {
+  description = "Map of port_keys to port IDs (from network module)"
+  type        = map(string)
+  default     = {}
+}
 variable "vms" {
   description = "Map of VMs with flexible boot and storage options"
   type = map(object({
@@ -55,7 +59,9 @@ variable "vms" {
     # Network/Subnet selection (ENHANCED!)
     network_name      = optional(string)       # Per-VM network override
     subnet_name       = optional(string)       # NEW! Specific subnet selection
-    port_ids          = optional(list(string))       # NEW! Use pre-created port
+#    port_ids          = optional(list(string))       # NEW! Use pre-created port
+    port_keys         = optional(list(string))  # 🔥 Use this for multi-NIC
+
     fixed_ip          = optional(string)       # NEW! Specific IP address
     
     # Other options

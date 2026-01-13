@@ -2,9 +2,14 @@
   "awx_inventory_file": {
     "sensitive": false,
     "type": "string",
-    "value": "./../terraform_outputs/awx_inventory.ini"
+    "value": "./../terraform_outputs/test/awx_inventory.ini"
   },
-  "dev_boot_volumes": {
+  "terraform_outputs_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/test/terraform_output.json"
+  },
+  "test_boot_volumes": {
     "sensitive": false,
     "type": [
       "object",
@@ -29,7 +34,7 @@
       }
     }
   },
-  "dev_data_volumes": {
+  "test_data_volumes": {
     "sensitive": false,
     "type": [
       "object",
@@ -37,7 +42,7 @@
         "vm1-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -49,7 +54,7 @@
         "vm12-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -61,7 +66,7 @@
         "vm2-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -73,7 +78,7 @@
         "vm3-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -85,7 +90,7 @@
         "vm4-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -97,7 +102,7 @@
         "vm5-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -109,7 +114,7 @@
         "vm6-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -121,7 +126,7 @@
         "vm7-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -133,7 +138,7 @@
         "vm8-data-0": [
           "object",
           {
-            "device": "dynamic",
+            "device": "string",
             "id": "string",
             "name": "string",
             "size": "number",
@@ -146,7 +151,7 @@
     ],
     "value": {
       "vm1-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "9328843b-0463-442c-bc96-73a7babe8eb7",
         "name": "web-server-subnet1-data-vm1-data-0",
         "size": 30,
@@ -155,7 +160,7 @@
         "vm_name": "web-server-subnet1"
       },
       "vm12-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "f92cbdbf-395a-49d7-aac6-a96f54ec71a5",
         "name": "test-data-vm12-data-0",
         "size": 50,
@@ -164,7 +169,7 @@
         "vm_name": "test"
       },
       "vm2-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "70072cff-5668-4013-86a2-aced9ec0e886",
         "name": "subnet2-3-data-vm2-data-0",
         "size": 30,
@@ -173,7 +178,7 @@
         "vm_name": "subnet2-3"
       },
       "vm3-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "9a59ed0e-3a73-4b2e-bacb-564fca6e0450",
         "name": "subnet3-data-vm3-data-0",
         "size": 100,
@@ -182,7 +187,7 @@
         "vm_name": "subnet3"
       },
       "vm4-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "01f55c1d-3163-45a0-9bbb-ef82971f0fe9",
         "name": "subnet4-data-vm4-data-0",
         "size": 50,
@@ -191,7 +196,7 @@
         "vm_name": "subnet4"
       },
       "vm5-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "443c71de-50b7-4f3a-bb75-2377ec124dc7",
         "name": "subnet5-data-vm5-data-0",
         "size": 40,
@@ -200,7 +205,7 @@
         "vm_name": "subnet5"
       },
       "vm6-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "9bfc5e5e-6ef1-4c0a-8768-9f5488ee91c3",
         "name": "subnet-22-data-vm6-data-0",
         "size": 40,
@@ -209,7 +214,7 @@
         "vm_name": "subnet-22"
       },
       "vm7-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "c88b9c93-9316-4e52-b814-3bc79a040310",
         "name": "boot-vol-data-vm7-data-0",
         "size": 30,
@@ -218,7 +223,7 @@
         "vm_name": "boot-vol"
       },
       "vm8-data-0": {
-        "device": null,
+        "device": "/dev/vdb",
         "id": "a68cd583-911e-4c71-8dc2-11e86d751381",
         "name": "net3-data-vm8-data-0",
         "size": 50,
@@ -228,7 +233,7 @@
       }
     }
   },
-  "dev_data_volumes_by_vm": {
+  "test_data_volumes_by_vm": {
     "sensitive": false,
     "type": [
       "object",
@@ -244,7 +249,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -265,7 +270,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -286,7 +291,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -307,7 +312,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -328,7 +333,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -349,7 +354,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -370,7 +375,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -391,7 +396,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -412,7 +417,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -430,7 +435,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9328843b-0463-442c-bc96-73a7babe8eb7",
             "name": "web-server-subnet1-data-vm1-data-0",
             "size": 30
@@ -442,7 +447,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "f92cbdbf-395a-49d7-aac6-a96f54ec71a5",
             "name": "test-data-vm12-data-0",
             "size": 50
@@ -454,7 +459,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "70072cff-5668-4013-86a2-aced9ec0e886",
             "name": "subnet2-3-data-vm2-data-0",
             "size": 30
@@ -466,7 +471,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9a59ed0e-3a73-4b2e-bacb-564fca6e0450",
             "name": "subnet3-data-vm3-data-0",
             "size": 100
@@ -478,7 +483,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "01f55c1d-3163-45a0-9bbb-ef82971f0fe9",
             "name": "subnet4-data-vm4-data-0",
             "size": 50
@@ -490,7 +495,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "443c71de-50b7-4f3a-bb75-2377ec124dc7",
             "name": "subnet5-data-vm5-data-0",
             "size": 40
@@ -502,7 +507,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9bfc5e5e-6ef1-4c0a-8768-9f5488ee91c3",
             "name": "subnet-22-data-vm6-data-0",
             "size": 40
@@ -514,7 +519,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "c88b9c93-9316-4e52-b814-3bc79a040310",
             "name": "boot-vol-data-vm7-data-0",
             "size": 30
@@ -526,7 +531,7 @@
         "volume_count": 1,
         "volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "a68cd583-911e-4c71-8dc2-11e86d751381",
             "name": "net3-data-vm8-data-0",
             "size": 50
@@ -535,7 +540,449 @@
       }
     }
   },
-  "dev_vm_details": {
+  "test_network_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "networks": [
+          "object",
+          {
+            "network_1": "string",
+            "network_2": "string",
+            "network_3": "string"
+          }
+        ],
+        "ports": [
+          "object",
+          {
+            "vm10_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm11_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm11_port_subnet2": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm12_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm12_port_subnet2": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm13_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm1_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm1_port_subnet2": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm2_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm2_port_subnet2": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm3_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm4_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm5_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm6_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm7_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm8_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "vm9_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ]
+          }
+        ],
+        "routers": [
+          "object",
+          {
+            "main_router": "string",
+            "router_new": "string",
+            "terra_router": "string"
+          }
+        ],
+        "subnets": [
+          "object",
+          {
+            "subnet_1": "string",
+            "subnet_2": "string",
+            "subnet_3": "string",
+            "subnet_4": "string",
+            "subnet_5": "string",
+            "subnet_6": "string",
+            "subnet_7": "string",
+            "subnet_8": "string",
+            "subnet_9": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "networks": {
+        "network_1": "9b6cb413-fe91-4786-8b10-10cc756e0eec",
+        "network_2": "6785b3ec-ad58-4745-a911-1e26d8e22a14",
+        "network_3": "bf3e9fb0-de21-4d82-b1c9-265eb9d78a40"
+      },
+      "ports": {
+        "vm10_port": {
+          "fixed_ips": [
+            "10.20.3.175"
+          ],
+          "id": "dd58080b-6f75-4960-96f7-ae37e1055eaa",
+          "mac": "fa:16:3e:2e:7f:71",
+          "name": "vm10-port",
+          "network_id": "6785b3ec-ad58-4745-a911-1e26d8e22a14"
+        },
+        "vm11_port": {
+          "fixed_ips": [
+            "10.10.1.196"
+          ],
+          "id": "4e6f5b43-09ec-4c35-a717-8586a416a78d",
+          "mac": "fa:16:3e:76:61:16",
+          "name": "vm11-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm11_port_subnet2": {
+          "fixed_ips": [
+            "10.10.2.220"
+          ],
+          "id": "f0c07245-4563-40a7-b08d-53cf58bd7950",
+          "mac": "fa:16:3e:bc:03:ee",
+          "name": "vm11-subnet2-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm12_port": {
+          "fixed_ips": [
+            "10.20.3.243"
+          ],
+          "id": "a2395afc-dfd9-43f0-9288-83b384ec93df",
+          "mac": "fa:16:3e:c1:ac:10",
+          "name": "vm12-port",
+          "network_id": "6785b3ec-ad58-4745-a911-1e26d8e22a14"
+        },
+        "vm12_port_subnet2": {
+          "fixed_ips": [
+            "10.10.4.18"
+          ],
+          "id": "74435638-b31b-41bf-8f5c-7c8545bca79e",
+          "mac": "fa:16:3e:5c:cd:8d",
+          "name": "vm12-port-sub2",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm13_port": {
+          "fixed_ips": [
+            "10.30.3.171"
+          ],
+          "id": "9c1693ba-3cd6-4590-b656-bc059675825c",
+          "mac": "fa:16:3e:31:7e:ec",
+          "name": "vm13-port",
+          "network_id": "bf3e9fb0-de21-4d82-b1c9-265eb9d78a40"
+        },
+        "vm1_port": {
+          "fixed_ips": [
+            "10.10.1.36"
+          ],
+          "id": "81f43e87-129d-4fc6-9ebb-7237c6e48c17",
+          "mac": "fa:16:3e:8a:a0:f6",
+          "name": "vm1-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm1_port_subnet2": {
+          "fixed_ips": [
+            "10.10.2.136"
+          ],
+          "id": "f14b152d-e17e-4e24-9bd2-5930c7c63e31",
+          "mac": "fa:16:3e:a2:31:d7",
+          "name": "vm1-subnet2-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm2_port": {
+          "fixed_ips": [
+            "10.10.2.50"
+          ],
+          "id": "fff46abb-6165-438c-a2a2-511730b6b77d",
+          "mac": "fa:16:3e:01:b3:f5",
+          "name": "vm2-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm2_port_subnet2": {
+          "fixed_ips": [
+            "10.10.3.51"
+          ],
+          "id": "7535c996-1bf5-40b1-b9c7-78b74e80d0cd",
+          "mac": "fa:16:3e:3a:0e:39",
+          "name": "vm2-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm3_port": {
+          "fixed_ips": [
+            "10.10.3.69"
+          ],
+          "id": "05caedcc-7b43-44af-acad-8cbe9501c743",
+          "mac": "fa:16:3e:78:3b:ea",
+          "name": "vm3-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm4_port": {
+          "fixed_ips": [
+            "10.10.4.100"
+          ],
+          "id": "d23cb9a9-1d60-4569-85e7-e2437c5ed49b",
+          "mac": "fa:16:3e:f5:f8:9e",
+          "name": "vm4-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm5_port": {
+          "fixed_ips": [
+            "10.10.5.98"
+          ],
+          "id": "726277e5-932d-4495-8d5d-9fa4fc296856",
+          "mac": "fa:16:3e:9f:c0:ec",
+          "name": "vm5-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm6_port": {
+          "fixed_ips": [
+            "10.10.2.242"
+          ],
+          "id": "80197305-f8b4-40d8-a02c-152a9cbd4987",
+          "mac": "fa:16:3e:6a:aa:e3",
+          "name": "vm6-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm7_port": {
+          "fixed_ips": [
+            "10.10.3.238"
+          ],
+          "id": "4357d147-9d37-4dd0-8b1f-7e40a0972e2c",
+          "mac": "fa:16:3e:66:e7:38",
+          "name": "vm7-port",
+          "network_id": "9b6cb413-fe91-4786-8b10-10cc756e0eec"
+        },
+        "vm8_port": {
+          "fixed_ips": [
+            "10.20.1.50"
+          ],
+          "id": "2ab4d41a-2a73-4ef0-9da8-3cc30c02bcb6",
+          "mac": "fa:16:3e:47:52:73",
+          "name": "vm8-port",
+          "network_id": "6785b3ec-ad58-4745-a911-1e26d8e22a14"
+        },
+        "vm9_port": {
+          "fixed_ips": [
+            "10.20.2.223"
+          ],
+          "id": "9c75341d-15c2-4955-bbe8-1f14d43cdb02",
+          "mac": "fa:16:3e:e1:ef:88",
+          "name": "vm9-port",
+          "network_id": "6785b3ec-ad58-4745-a911-1e26d8e22a14"
+        }
+      },
+      "routers": {
+        "main_router": "8b5ec2ff-7aee-4cd9-9d33-8e80c4a420c9",
+        "router_new": "e99b0a14-879a-439d-a2a6-114cec2d74b9",
+        "terra_router": "4648a3f1-f095-4902-82fc-549f926d35aa"
+      },
+      "subnets": {
+        "subnet_1": "8cf3e200-5588-4fc8-adf9-63baa1e0d895",
+        "subnet_2": "7093196c-b37c-4675-aad7-b477992332dd",
+        "subnet_3": "b360a8b0-bb69-4600-a40f-b4f422aa3c5e",
+        "subnet_4": "ffcc9a2d-85f5-4abd-93c9-c70a2e49de75",
+        "subnet_5": "75e00014-c76d-4dcd-ab81-55eb4aa794ef",
+        "subnet_6": "60a1c082-2fbd-4bd3-9a4a-c78dbc89020e",
+        "subnet_7": "f9c1a29c-7c2b-4bfa-8111-4d34b2b1e5ca",
+        "subnet_8": "3897da3f-5854-495f-ac8c-5673b9cd574e",
+        "subnet_9": "1925b355-d8bb-49bf-b26e-673858303f27"
+      }
+    }
+  },
+  "test_vm_details": {
     "sensitive": false,
     "type": [
       "object",
@@ -551,7 +998,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -578,7 +1025,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -605,7 +1052,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -632,7 +1079,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -659,7 +1106,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -686,7 +1133,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -713,7 +1160,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -740,7 +1187,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -767,7 +1214,7 @@
                 [
                   "object",
                   {
-                    "device": "dynamic",
+                    "device": "string",
                     "id": "string",
                     "name": "string",
                     "size": "number"
@@ -791,7 +1238,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9328843b-0463-442c-bc96-73a7babe8eb7",
             "name": "web-server-subnet1-data-vm1-data-0",
             "size": 30
@@ -809,7 +1256,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "f92cbdbf-395a-49d7-aac6-a96f54ec71a5",
             "name": "test-data-vm12-data-0",
             "size": 50
@@ -827,7 +1274,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "70072cff-5668-4013-86a2-aced9ec0e886",
             "name": "subnet2-3-data-vm2-data-0",
             "size": 30
@@ -845,7 +1292,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9a59ed0e-3a73-4b2e-bacb-564fca6e0450",
             "name": "subnet3-data-vm3-data-0",
             "size": 100
@@ -863,7 +1310,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "01f55c1d-3163-45a0-9bbb-ef82971f0fe9",
             "name": "subnet4-data-vm4-data-0",
             "size": 50
@@ -881,7 +1328,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "443c71de-50b7-4f3a-bb75-2377ec124dc7",
             "name": "subnet5-data-vm5-data-0",
             "size": 40
@@ -899,7 +1346,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "9bfc5e5e-6ef1-4c0a-8768-9f5488ee91c3",
             "name": "subnet-22-data-vm6-data-0",
             "size": 40
@@ -917,7 +1364,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "c88b9c93-9316-4e52-b814-3bc79a040310",
             "name": "boot-vol-data-vm7-data-0",
             "size": 30
@@ -935,7 +1382,7 @@
         "data_volume_count": 1,
         "data_volumes": [
           {
-            "device": null,
+            "device": "/dev/vdb",
             "id": "a68cd583-911e-4c71-8dc2-11e86d751381",
             "name": "net3-data-vm8-data-0",
             "size": 50
@@ -950,13 +1397,14 @@
       }
     }
   },
-  "dev_vm_fips": {
+  "test_vm_fips": {
     "sensitive": false,
     "type": [
       "object",
       {
         "vm1": "string",
         "vm12": "string",
+        "vm13": "string",
         "vm2": "string",
         "vm5": "string",
         "vm6": "string",
@@ -966,13 +1414,14 @@
     "value": {
       "vm1": "172.20.1.72",
       "vm12": "172.20.1.56",
+      "vm13": "172.20.1.73",
       "vm2": "172.20.1.68",
       "vm5": "172.20.1.179",
       "vm6": "172.20.1.196",
       "vm7": "172.20.1.198"
     }
   },
-  "dev_vm_storage_summary": {
+  "test_vm_storage_summary": {
     "sensitive": false,
     "type": [
       "object",
@@ -989,6 +1438,17 @@
           }
         ],
         "vm12": [
+          "object",
+          {
+            "boot_method": "string",
+            "boot_volume_size": "string",
+            "data_volumes_count": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "vm13": [
           "object",
           {
             "boot_method": "string",
@@ -1058,7 +1518,7 @@
           "object",
           {
             "boot_method": "string",
-            "boot_volume_size": "string",
+            "boot_volume_size": "number",
             "data_volumes_count": "number",
             "data_volumes_total_size": "number",
             "total_storage": "number",
@@ -1094,6 +1554,14 @@
         "data_volumes_total_size": 50,
         "total_storage": 50,
         "vm_name": "test"
+      },
+      "vm13": {
+        "boot_method": "image",
+        "boot_volume_size": "N/A (image boot)",
+        "data_volumes_count": 1,
+        "data_volumes_total_size": 50,
+        "total_storage": 50,
+        "vm_name": "net-3"
       },
       "vm2": {
         "boot_method": "image",
@@ -1137,7 +1605,7 @@
       },
       "vm7": {
         "boot_method": "snapshot/clone",
-        "boot_volume_size": "30",
+        "boot_volume_size": 30,
         "data_volumes_count": 1,
         "data_volumes_total_size": 30,
         "total_storage": 60,
@@ -1152,10 +1620,5 @@
         "vm_name": "net3"
       }
     }
-  },
-  "terraform_outputs_file": {
-    "sensitive": false,
-    "type": "string",
-    "value": "./../terraform_outputs/terraform_output.json"
   }
 }

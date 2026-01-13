@@ -1,7 +1,10 @@
 ############################################################
-# Root-level outputs (from module)
+# environments/dev/outputs.tf
 ############################################################
 
+############################################################
+# Root-level outputs (from module)
+############################################################
 output "dev_vm_fips" {
   description = "Floating IPs of all VMs"
   value       = module.vms.vm_fips
@@ -35,7 +38,6 @@ output "dev_vm_storage_summary" {
 ############################################################
 # Save outputs and generate AWX inventory
 ############################################################
-
 resource "null_resource" "save_outputs" {
   depends_on = [
     module.vms
@@ -43,20 +45,22 @@ resource "null_resource" "save_outputs" {
 
   triggers = {
     always_run = timestamp()
-    vm_fips = jsonencode(module.vms.vm_fips)
+    vm_fips    = jsonencode(module.vms.vm_fips)
   }
 
   provisioner "local-exec" {
     command = <<EOT
-mkdir -p ${path.module}/../terraform_outputs
+# Create dev-specific output directory
+mkdir -p ${path.module}/../terraform_outputs/dev
 
-# Save Terraform outputs to JSON
-terraform output -json > ${path.module}/../terraform_outputs/terraform_output.json
+# Save Terraform outputs to JSON (dev folder)
+terraform output -json > ${path.module}/../terraform_outputs/dev/terraform_output.json
 
-# Generate AWX inventory from Terraform output JSON
+# Generate AWX inventory from Terraform output JSON (dev folder)
 python3 ${path.module}/../../scripts/generate_awx_inventory.py \
-  ${path.module}/../terraform_outputs/terraform_output.json \
-  ${path.module}/../terraform_outputs/awx_inventory.ini
+  ${path.module}/../terraform_outputs/dev/terraform_output.json \
+  ${path.module}/../terraform_outputs/dev/awx_inventory.ini \
+  dev
 EOT
     interpreter = ["/bin/bash", "-c"]
   }
@@ -65,15 +69,14 @@ EOT
 ############################################################
 # Output file locations
 ############################################################
-
 output "terraform_outputs_file" {
   description = "Path to stored Terraform outputs JSON"
-  value       = "${path.module}/../terraform_outputs/terraform_output.json"
+  value       = "${path.module}/../terraform_outputs/dev/terraform_output.json"
   depends_on  = [null_resource.save_outputs]
 }
 
 output "awx_inventory_file" {
   description = "Path to generated AWX inventory file"
-  value       = "${path.module}/../terraform_outputs/awx_inventory.ini"
+  value       = "${path.module}/../terraform_outputs/dev/awx_inventory.ini"
   depends_on  = [null_resource.save_outputs]
 }
