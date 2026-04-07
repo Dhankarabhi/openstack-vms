@@ -1,5 +1,5 @@
 ###############################################
-# Network Module Variables
+# Network Module Variables (ENHANCED)
 ###############################################
 
 variable "external_network_name" {
@@ -7,6 +7,36 @@ variable "external_network_name" {
   type        = string
 }
 
+###############################################
+# 🔥 NEW: Import Existing Resources
+###############################################
+variable "use_existing_networks" {
+  description = "Import networks from other environments by name"
+  type = map(object({
+    name = string
+  }))
+  default = {}
+}
+
+variable "use_existing_subnets" {
+  description = "Import subnets from other environments by name"
+  type = map(object({
+    name = string
+  }))
+  default = {}
+}
+
+variable "use_existing_routers" {
+  description = "Import routers from other environments by name"
+  type = map(object({
+    name = string
+  }))
+  default = {}
+}
+
+###############################################
+# Create New Resources
+###############################################
 variable "networks" {
   type = map(object({
     name           = string
@@ -40,15 +70,12 @@ variable "routers" {
   default = {}
 }
 
-###############################################
-# 🔥 PORTS (UPDATED – subnet_key OPTIONAL)
-###############################################
 variable "ports" {
   description = "Neutron ports for subnet-specific VM placement"
   type = map(object({
     name            = string
     network_key     = string
-    subnet_key      = string   # ✅ FIXED
+    subnet_key      = string
     fixed_ip        = optional(string)
     security_groups = optional(list(string), [])
   }))

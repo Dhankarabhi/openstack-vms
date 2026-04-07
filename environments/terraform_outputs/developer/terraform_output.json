@@ -1,0 +1,606 @@
+{
+  "awx_inventory_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/developer/awx_inventory.ini"
+  },
+  "developer_boot_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {}
+    ],
+    "value": {}
+  },
+  "developer_data_volumes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {}
+    ],
+    "value": {}
+  },
+  "developer_data_volumes_by_vm": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "extra_vm": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "multi_vm": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "new_vm": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "old_vm": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "extra_vm": {
+        "vm_name": "vm-extra-subnet",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "multi_vm": {
+        "vm_name": "vm-multi-nic",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "new_vm": {
+        "vm_name": "vm-new-subnet",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "old_vm": {
+        "vm_name": "vm-existing-subnet",
+        "volume_count": 0,
+        "volumes": []
+      }
+    }
+  },
+  "developer_network_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "networks": [
+          "object",
+          {
+            "new_network": "string",
+            "old_network": "string"
+          }
+        ],
+        "ports": [
+          "object",
+          {
+            "extra_vm_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "multi_vm_port_new": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "multi_vm_port_old": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "new_vm_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ],
+            "old_vm_port": [
+              "object",
+              {
+                "fixed_ips": [
+                  "list",
+                  "string"
+                ],
+                "id": "string",
+                "mac": "string",
+                "name": "string",
+                "network_id": "string"
+              }
+            ]
+          }
+        ],
+        "routers": [
+          "object",
+          {
+            "new_router": "string",
+            "old_router": "string"
+          }
+        ],
+        "subnets": [
+          "object",
+          {
+            "extra_subnet": "string",
+            "new_subnet": "string",
+            "old_subnet": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "networks": {
+        "new_network": "f0ac4d9a-4994-40ea-930f-c82aca69ba4a",
+        "old_network": "c1b877ea-9774-4b23-b483-a5a56ada87ad"
+      },
+      "ports": {
+        "extra_vm_port": {
+          "fixed_ips": [
+            "10.10.200.203"
+          ],
+          "id": "a323a6ac-02d7-42ab-ba16-2e24d280e707",
+          "mac": "fa:16:3e:2f:cb:a4",
+          "name": "extra-vm-port",
+          "network_id": "c1b877ea-9774-4b23-b483-a5a56ada87ad"
+        },
+        "multi_vm_port_new": {
+          "fixed_ips": [
+            "10.20.100.141"
+          ],
+          "id": "825d11ad-d90a-4f47-af5a-93e35dda3d1e",
+          "mac": "fa:16:3e:3f:0a:9d",
+          "name": "multi-vm-port-new",
+          "network_id": "f0ac4d9a-4994-40ea-930f-c82aca69ba4a"
+        },
+        "multi_vm_port_old": {
+          "fixed_ips": [
+            "10.10.0.16"
+          ],
+          "id": "da5ec4bd-795f-46fa-bf0d-c919407aded2",
+          "mac": "fa:16:3e:b1:05:80",
+          "name": "multi-vm-port-old",
+          "network_id": "c1b877ea-9774-4b23-b483-a5a56ada87ad"
+        },
+        "new_vm_port": {
+          "fixed_ips": [
+            "10.20.100.187"
+          ],
+          "id": "111308b1-fc78-4a19-94f2-1b16da195ffe",
+          "mac": "fa:16:3e:a8:ae:84",
+          "name": "new-vm-port",
+          "network_id": "f0ac4d9a-4994-40ea-930f-c82aca69ba4a"
+        },
+        "old_vm_port": {
+          "fixed_ips": [
+            "10.10.0.62"
+          ],
+          "id": "bef65a21-ad58-4a53-98f2-f77fb1365630",
+          "mac": "fa:16:3e:eb:43:73",
+          "name": "old-vm-port",
+          "network_id": "c1b877ea-9774-4b23-b483-a5a56ada87ad"
+        }
+      },
+      "routers": {
+        "new_router": "4b69af18-9351-4f8f-a496-f7d1f60201d2",
+        "old_router": "69369630-3ff6-4d39-8fdb-1f973dbe077f"
+      },
+      "subnets": {
+        "extra_subnet": "de9112bd-cf55-4562-a7d0-775c599c6e2c",
+        "new_subnet": "8d618206-b4d9-48c5-a55c-3fcaa94ea799",
+        "old_subnet": "61d94fd9-391f-4a48-889b-6604e694c2e9"
+      }
+    }
+  },
+  "developer_resource_summary": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "networks": [
+          "object",
+          {
+            "created": [
+              "list",
+              "string"
+            ],
+            "imported": [
+              "list",
+              "string"
+            ],
+            "total": [
+              "tuple",
+              [
+                "string",
+                "string"
+              ]
+            ]
+          }
+        ],
+        "ports": [
+          "object",
+          {
+            "created": [
+              "list",
+              "string"
+            ]
+          }
+        ],
+        "routers": [
+          "object",
+          {
+            "created": [
+              "tuple",
+              [
+                "string"
+              ]
+            ],
+            "existing": [
+              "tuple",
+              []
+            ],
+            "imported": [
+              "list",
+              "string"
+            ],
+            "total": [
+              "tuple",
+              [
+                "string",
+                "string"
+              ]
+            ]
+          }
+        ],
+        "subnets": [
+          "object",
+          {
+            "created": [
+              "list",
+              "string"
+            ],
+            "imported": [
+              "list",
+              "string"
+            ],
+            "total": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "networks": {
+        "created": [
+          "new_network"
+        ],
+        "imported": [
+          "old_network"
+        ],
+        "total": [
+          "new_network",
+          "old_network"
+        ]
+      },
+      "ports": {
+        "created": [
+          "extra_vm_port",
+          "multi_vm_port_new",
+          "multi_vm_port_old",
+          "new_vm_port",
+          "old_vm_port"
+        ]
+      },
+      "routers": {
+        "created": [
+          "new_router"
+        ],
+        "existing": [],
+        "imported": [
+          "old_router"
+        ],
+        "total": [
+          "new_router",
+          "old_router"
+        ]
+      },
+      "subnets": {
+        "created": [
+          "extra_subnet",
+          "new_subnet"
+        ],
+        "imported": [
+          "old_subnet"
+        ],
+        "total": [
+          "extra_subnet",
+          "new_subnet",
+          "old_subnet"
+        ]
+      }
+    }
+  },
+  "developer_vm_details": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "extra_vm": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "dynamic",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "multi_vm": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "new_vm": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "old_vm": [
+          "object",
+          {
+            "boot_volume_id": "dynamic",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "extra_vm": {
+        "boot_volume_id": null,
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": null,
+        "flavor": "m1.small",
+        "id": "7910ea0b-f130-43bd-8e2a-e248b77ebd23",
+        "name": "vm-extra-subnet",
+        "power_state": "active",
+        "private_ip": "10.10.200.203"
+      },
+      "multi_vm": {
+        "boot_volume_id": null,
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "192.168.13.24",
+        "flavor": "m1.small",
+        "id": "2989c474-1004-4a28-87c1-51e900f7591e",
+        "name": "vm-multi-nic",
+        "power_state": "active",
+        "private_ip": "10.10.0.16"
+      },
+      "new_vm": {
+        "boot_volume_id": null,
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "192.168.13.148",
+        "flavor": "m1.small",
+        "id": "2b3a1f5c-289e-4182-ba88-4d7d5c55c4d3",
+        "name": "vm-new-subnet",
+        "power_state": "active",
+        "private_ip": "10.20.100.187"
+      },
+      "old_vm": {
+        "boot_volume_id": null,
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "192.168.13.209",
+        "flavor": "m1.small",
+        "id": "e2bd70e7-9f29-4b48-b9ac-f56f42d62cb9",
+        "name": "vm-existing-subnet",
+        "power_state": "active",
+        "private_ip": "10.10.0.62"
+      }
+    }
+  },
+  "developer_vm_fips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "multi_vm": "string",
+        "new_vm": "string",
+        "old_vm": "string"
+      }
+    ],
+    "value": {
+      "multi_vm": "192.168.13.24",
+      "new_vm": "192.168.13.148",
+      "old_vm": "192.168.13.209"
+    }
+  },
+  "developer_vm_storage_summary": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "extra_vm": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "multi_vm": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "new_vm": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "old_vm": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "extra_vm": {
+        "boot_volume_size": 0,
+        "data_volumes_total_size": 0,
+        "total_storage": 0,
+        "vm_name": "vm-extra-subnet"
+      },
+      "multi_vm": {
+        "boot_volume_size": 0,
+        "data_volumes_total_size": 0,
+        "total_storage": 0,
+        "vm_name": "vm-multi-nic"
+      },
+      "new_vm": {
+        "boot_volume_size": 0,
+        "data_volumes_total_size": 0,
+        "total_storage": 0,
+        "vm_name": "vm-new-subnet"
+      },
+      "old_vm": {
+        "boot_volume_size": 0,
+        "data_volumes_total_size": 0,
+        "total_storage": 0,
+        "vm_name": "vm-existing-subnet"
+      }
+    }
+  },
+  "terraform_outputs_file": {
+    "sensitive": false,
+    "type": "string",
+    "value": "./../terraform_outputs/developer/terraform_output.json"
+  }
+}

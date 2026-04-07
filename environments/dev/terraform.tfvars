@@ -67,8 +67,7 @@ vms = {
  web3 = {
     name             = "harbor-master"
     flavor           = "m1.large"
-
-    # Boot from snapshot
+   # Boot from snapshot
     boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
     boot_volume_size = 50
     security_groups = ["default", "wazuh", "k8s"]
@@ -114,6 +113,38 @@ vms = {
     assign_fip      = true
     user_data_file  = "../../scripts/user.sh"
   }
+ web5-2 = {
+    name             = "harbor-worker-3"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+   # Data volumes
+    data_volumes = [
+      {
+        size        = 200
+        description = "vpn"
+      }
+    ]
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+
+ web5-1 = {
+    name             = "harbor-lb"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
 
  web6 = {
     name             = "k8s-master"
@@ -146,6 +177,110 @@ vms = {
     # Boot from snapshot
     boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
     boot_volume_size = 50
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+ web9 = {
+    name             = "minio-master"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+ web10 = {
+    name             = "minio-worker"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    data_volumes = [
+      {
+        size        = 70
+        description = "vpn"
+      },
+      {
+        size        = 70
+        description = "vpn"
+      }
+
+    ]
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+ web11 = {
+    name             = "minio-worker-2"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    data_volumes = [
+      {
+        size        = 70
+        description = "vpn"
+      },
+      {
+        size        = 70
+        description = "vpn"
+      }
+
+    ]
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+ web12 = {
+    name             = "minio-worker-3"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    data_volumes = [
+      {
+        size        = 70
+        description = "vpn"
+      },
+      {
+        size        = 70
+        description = "vpn"
+      }
+
+    ]
+    security_groups = ["default", "wazuh", "k8s"]
+    keypair         = "test"
+    assign_fip      = true
+    user_data_file  = "../../scripts/user.sh"
+  }
+ web13 = {
+    name             = "minio-worker-4"
+    flavor           = "m1.large"
+
+    # Boot from snapshot
+    boot_snapshot_id = "882d7a0e-23e7-4112-99ba-481f4f1b15ba"
+    boot_volume_size = 50
+    data_volumes = [
+      {
+        size        = 70
+        description = "vpn"
+      },
+      {
+        size        = 70
+        description = "vpn"
+      }
+
+    ]
     security_groups = ["default", "wazuh", "k8s"]
     keypair         = "test"
     assign_fip      = true

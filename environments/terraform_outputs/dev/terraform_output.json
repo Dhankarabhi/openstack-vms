@@ -27,6 +27,42 @@
             "type": "string"
           }
         ],
+        "web10": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web11": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web12": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web13": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
         "web2": [
           "object",
           {
@@ -63,6 +99,24 @@
             "type": "string"
           }
         ],
+        "web5-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
+        "web5-2": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
+        ],
         "web6": [
           "object",
           {
@@ -89,6 +143,15 @@
             "size": "number",
             "type": "string"
           }
+        ],
+        "web9": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string"
+          }
         ]
       }
     ],
@@ -105,6 +168,30 @@
         "size": 50,
         "type": "boot"
       },
+      "web10": {
+        "id": "e531cb11-24c3-4298-9c99-9e2582052c2f",
+        "name": "minio-worker-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web11": {
+        "id": "79026f03-0ee8-4df1-90ae-47a91b43e9a9",
+        "name": "minio-worker-2-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web12": {
+        "id": "6206835b-8ddb-4c78-a045-6e7d6374bb6d",
+        "name": "minio-worker-3-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web13": {
+        "id": "9cb04991-8b87-4b1b-886b-84ab71cdf2a0",
+        "name": "minio-worker-4-boot",
+        "size": 50,
+        "type": "boot"
+      },
       "web2": {
         "id": "28a9a036-eb82-4d5c-9332-d8977e2c148c",
         "name": "sonar-boot",
@@ -112,20 +199,32 @@
         "type": "boot"
       },
       "web3": {
-        "id": "0858b5f1-9bde-4eff-80bb-c9e737b9c3b8",
+        "id": "2e15db1f-4232-4ac7-857f-71e21b560d18",
         "name": "harbor-master-boot",
         "size": 50,
         "type": "boot"
       },
       "web4": {
-        "id": "9d396888-30f9-4547-b14c-d0f46571b46f",
+        "id": "b6a22b7b-20af-4ca8-8660-6c1144ffe08a",
         "name": "harbor-worker-1-boot",
         "size": 50,
         "type": "boot"
       },
       "web5": {
-        "id": "c979a3e0-6130-494f-973d-664db0471193",
+        "id": "458df21f-f74c-472b-ad6f-58836e384bde",
         "name": "harbor-worker-2-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web5-1": {
+        "id": "3cf0ecad-0c71-47ad-adf2-ce9917c042ed",
+        "name": "harbor-lb-boot",
+        "size": 50,
+        "type": "boot"
+      },
+      "web5-2": {
+        "id": "e353d89c-b1d2-4447-a1f4-f55afa4046d0",
+        "name": "harbor-worker-3-boot",
         "size": 50,
         "type": "boot"
       },
@@ -146,6 +245,12 @@
         "name": "argo-cd-boot",
         "size": 50,
         "type": "boot"
+      },
+      "web9": {
+        "id": "321b23b1-4e2c-4d61-8f5c-b6a61def99b9",
+        "name": "minio-master-boot",
+        "size": 50,
+        "type": "boot"
       }
     }
   },
@@ -154,7 +259,97 @@
     "type": [
       "object",
       {
+        "web10-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web10-data-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web11-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web11-data-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web12-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web12-data-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web13-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web13-data-1": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
         "web4-data-0": [
+          "object",
+          {
+            "id": "string",
+            "name": "string",
+            "size": "number",
+            "type": "string",
+            "vm_key": "string"
+          }
+        ],
+        "web5-2-data-0": [
           "object",
           {
             "id": "string",
@@ -177,15 +372,78 @@
       }
     ],
     "value": {
+      "web10-data-0": {
+        "id": "4d3ef36e-756e-4a0a-9f29-bc20cd7f5762",
+        "name": "minio-worker-data-web10-data-0",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web10"
+      },
+      "web10-data-1": {
+        "id": "e5931a95-2752-4fb1-8b06-5516def00cfb",
+        "name": "minio-worker-data-web10-data-1",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web10"
+      },
+      "web11-data-0": {
+        "id": "ee1d2bb4-a74a-4e79-91e4-bf2c3f2d3a09",
+        "name": "minio-worker-2-data-web11-data-0",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web11"
+      },
+      "web11-data-1": {
+        "id": "bd281da5-7289-434b-bce1-02758ddd60cf",
+        "name": "minio-worker-2-data-web11-data-1",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web11"
+      },
+      "web12-data-0": {
+        "id": "f5f22d88-37bf-475a-b65e-635a6e38339d",
+        "name": "minio-worker-3-data-web12-data-0",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web12"
+      },
+      "web12-data-1": {
+        "id": "019e2015-fd41-46fa-a541-f1808e353a7d",
+        "name": "minio-worker-3-data-web12-data-1",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web12"
+      },
+      "web13-data-0": {
+        "id": "a0435523-479a-4bad-96b6-37a1cac5fbdc",
+        "name": "minio-worker-4-data-web13-data-0",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web13"
+      },
+      "web13-data-1": {
+        "id": "1efd7d0c-fff4-4086-90a3-e70e277c49d5",
+        "name": "minio-worker-4-data-web13-data-1",
+        "size": 70,
+        "type": "data",
+        "vm_key": "web13"
+      },
       "web4-data-0": {
-        "id": "d0a86b96-ab3d-4ff4-baa2-041d95d3126f",
+        "id": "3804e71f-1122-4937-804f-1c6d378dcdbc",
         "name": "harbor-worker-1-data-web4-data-0",
         "size": 200,
         "type": "data",
         "vm_key": "web4"
       },
+      "web5-2-data-0": {
+        "id": "fab7744e-6147-439a-8eb1-10b6c8ecdd85",
+        "name": "harbor-worker-3-data-web5-2-data-0",
+        "size": 200,
+        "type": "data",
+        "vm_key": "web5-2"
+      },
       "web5-data-0": {
-        "id": "36eea46d-0e31-44b6-a7d8-3d34c1b62926",
+        "id": "33917594-fa5f-4188-987d-b02076002bfd",
         "name": "harbor-worker-2-data-web5-data-0",
         "size": 200,
         "type": "data",
@@ -220,6 +478,118 @@
             ]
           }
         ],
+        "web10": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "web11": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "web12": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "web13": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
         "web2": [
           "object",
           {
@@ -282,6 +652,37 @@
             ]
           }
         ],
+        "web5-1": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
+        ],
+        "web5-2": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "id": "dynamic",
+                    "name": "dynamic",
+                    "size": "number"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
         "web6": [
           "object",
           {
@@ -314,6 +715,17 @@
               []
             ]
           }
+        ],
+        "web9": [
+          "object",
+          {
+            "vm_name": "string",
+            "volume_count": "number",
+            "volumes": [
+              "tuple",
+              []
+            ]
+          }
         ]
       }
     ],
@@ -327,6 +739,70 @@
         "vm_name": "jenkins-agent",
         "volume_count": 0,
         "volumes": []
+      },
+      "web10": {
+        "vm_name": "minio-worker",
+        "volume_count": 2,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          },
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          }
+        ]
+      },
+      "web11": {
+        "vm_name": "minio-worker-2",
+        "volume_count": 2,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          },
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          }
+        ]
+      },
+      "web12": {
+        "vm_name": "minio-worker-3",
+        "volume_count": 2,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          },
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          }
+        ]
+      },
+      "web13": {
+        "vm_name": "minio-worker-4",
+        "volume_count": 2,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          },
+          {
+            "id": null,
+            "name": null,
+            "size": 70
+          }
+        ]
       },
       "web2": {
         "vm_name": "sonar",
@@ -360,6 +836,22 @@
           }
         ]
       },
+      "web5-1": {
+        "vm_name": "harbor-lb",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web5-2": {
+        "vm_name": "harbor-worker-3",
+        "volume_count": 1,
+        "volumes": [
+          {
+            "id": null,
+            "name": null,
+            "size": 200
+          }
+        ]
+      },
       "web6": {
         "vm_name": "k8s-master",
         "volume_count": 0,
@@ -372,6 +864,11 @@
       },
       "web8": {
         "vm_name": "argo-cd",
+        "volume_count": 0,
+        "volumes": []
+      },
+      "web9": {
+        "vm_name": "minio-master",
         "volume_count": 0,
         "volumes": []
       }
@@ -416,6 +913,126 @@
             "private_ip": "string"
           }
         ],
+        "web10": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web11": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web12": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web13": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ],
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
         "web2": [
           "object",
           {
@@ -498,6 +1115,47 @@
             "private_ip": "string"
           }
         ],
+        "web5-1": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web5-2": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              [
+                [
+                  "object",
+                  {
+                    "size": "number"
+                  }
+                ]
+              ]
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
         "web6": [
           "object",
           {
@@ -533,6 +1191,23 @@
           }
         ],
         "web8": [
+          "object",
+          {
+            "boot_volume_id": "string",
+            "data_volume_count": "number",
+            "data_volumes": [
+              "tuple",
+              []
+            ],
+            "fip": "string",
+            "flavor": "string",
+            "id": "string",
+            "name": "string",
+            "power_state": "string",
+            "private_ip": "string"
+          }
+        ],
+        "web9": [
           "object",
           {
             "boot_volume_id": "string",
@@ -574,6 +1249,78 @@
         "power_state": "active",
         "private_ip": "10.0.0.126"
       },
+      "web10": {
+        "boot_volume_id": "e531cb11-24c3-4298-9c99-9e2582052c2f",
+        "data_volume_count": 2,
+        "data_volumes": [
+          {
+            "size": 70
+          },
+          {
+            "size": 70
+          }
+        ],
+        "fip": "172.20.1.39",
+        "flavor": "m1.large",
+        "id": "12b4379e-7b3b-4bb4-a0e4-3942921c89ae",
+        "name": "minio-worker",
+        "power_state": "active",
+        "private_ip": "10.0.0.185"
+      },
+      "web11": {
+        "boot_volume_id": "79026f03-0ee8-4df1-90ae-47a91b43e9a9",
+        "data_volume_count": 2,
+        "data_volumes": [
+          {
+            "size": 70
+          },
+          {
+            "size": 70
+          }
+        ],
+        "fip": "172.20.1.124",
+        "flavor": "m1.large",
+        "id": "74f5b5c9-ee24-4b6d-ace6-8e0632233b09",
+        "name": "minio-worker-2",
+        "power_state": "active",
+        "private_ip": "10.0.0.25"
+      },
+      "web12": {
+        "boot_volume_id": "6206835b-8ddb-4c78-a045-6e7d6374bb6d",
+        "data_volume_count": 2,
+        "data_volumes": [
+          {
+            "size": 70
+          },
+          {
+            "size": 70
+          }
+        ],
+        "fip": "172.20.1.100",
+        "flavor": "m1.large",
+        "id": "fdd09378-e1e8-4056-a585-a54e4599cf1d",
+        "name": "minio-worker-3",
+        "power_state": "active",
+        "private_ip": "10.0.0.61"
+      },
+      "web13": {
+        "boot_volume_id": "9cb04991-8b87-4b1b-886b-84ab71cdf2a0",
+        "data_volume_count": 2,
+        "data_volumes": [
+          {
+            "size": 70
+          },
+          {
+            "size": 70
+          }
+        ],
+        "fip": "172.20.1.138",
+        "flavor": "m1.large",
+        "id": "f5a07a03-3dd5-4d93-9be8-1f47f17b1b4e",
+        "name": "minio-worker-4",
+        "power_state": "active",
+        "private_ip": "10.0.0.52"
+      },
       "web2": {
         "boot_volume_id": "28a9a036-eb82-4d5c-9332-d8977e2c148c",
         "data_volume_count": 0,
@@ -586,45 +1333,71 @@
         "private_ip": "10.0.0.85"
       },
       "web3": {
-        "boot_volume_id": "0858b5f1-9bde-4eff-80bb-c9e737b9c3b8",
+        "boot_volume_id": "2e15db1f-4232-4ac7-857f-71e21b560d18",
         "data_volume_count": 0,
         "data_volumes": [],
-        "fip": "172.20.1.118",
+        "fip": "172.20.1.87",
         "flavor": "m1.large",
-        "id": "cc4308f3-2957-4ee5-95dc-f89a390d4139",
+        "id": "1ed07ab6-dea5-489b-855d-73f740ca9f10",
         "name": "harbor-master",
         "power_state": "active",
-        "private_ip": "10.0.0.219"
+        "private_ip": "10.0.0.35"
       },
       "web4": {
-        "boot_volume_id": "9d396888-30f9-4547-b14c-d0f46571b46f",
+        "boot_volume_id": "b6a22b7b-20af-4ca8-8660-6c1144ffe08a",
         "data_volume_count": 1,
         "data_volumes": [
           {
             "size": 200
           }
         ],
-        "fip": "172.20.1.48",
+        "fip": "172.20.1.125",
         "flavor": "m1.large",
-        "id": "757359b7-58b2-48b9-bcf2-720ed57e4c73",
+        "id": "242e901c-ccd7-49f6-bd9e-30870f2ad79e",
         "name": "harbor-worker-1",
         "power_state": "active",
-        "private_ip": "10.0.0.58"
+        "private_ip": "10.0.0.119"
       },
       "web5": {
-        "boot_volume_id": "c979a3e0-6130-494f-973d-664db0471193",
+        "boot_volume_id": "458df21f-f74c-472b-ad6f-58836e384bde",
         "data_volume_count": 1,
         "data_volumes": [
           {
             "size": 200
           }
         ],
-        "fip": "172.20.1.99",
+        "fip": "172.20.1.75",
         "flavor": "m1.large",
-        "id": "9419bfd9-7406-4edd-9b22-f1d26609c433",
+        "id": "836e5019-59e6-48da-96bf-18109386315d",
         "name": "harbor-worker-2",
         "power_state": "active",
-        "private_ip": "10.0.0.55"
+        "private_ip": "10.0.0.191"
+      },
+      "web5-1": {
+        "boot_volume_id": "3cf0ecad-0c71-47ad-adf2-ce9917c042ed",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.82",
+        "flavor": "m1.large",
+        "id": "bab7f2cb-6bcb-4184-8c2a-227981424bb6",
+        "name": "harbor-lb",
+        "power_state": "active",
+        "private_ip": "10.0.0.239"
+      },
+      "web5-2": {
+        "boot_volume_id": "e353d89c-b1d2-4447-a1f4-f55afa4046d0",
+        "data_volume_count": 1,
+        "data_volumes": [
+          {
+            "size": 200
+          }
+        ],
+        "fip": "172.20.1.165",
+        "flavor": "m1.large",
+        "id": "555ae3c8-91a0-4edb-a123-be9bc7032f76",
+        "name": "harbor-worker-3",
+        "power_state": "active",
+        "private_ip": "10.0.0.182"
       },
       "web6": {
         "boot_volume_id": "8af9d236-4624-461f-9d61-ed9b44044190",
@@ -658,6 +1431,17 @@
         "name": "argo-cd",
         "power_state": "active",
         "private_ip": "10.0.0.75"
+      },
+      "web9": {
+        "boot_volume_id": "321b23b1-4e2c-4d61-8f5c-b6a61def99b9",
+        "data_volume_count": 0,
+        "data_volumes": [],
+        "fip": "172.20.1.111",
+        "flavor": "m1.large",
+        "id": "4b7b9b81-5717-4110-8b95-638e1d358f60",
+        "name": "minio-master",
+        "power_state": "active",
+        "private_ip": "10.0.0.204"
       }
     }
   },
@@ -668,25 +1452,39 @@
       {
         "web1": "string",
         "web1-1": "string",
+        "web10": "string",
+        "web11": "string",
+        "web12": "string",
+        "web13": "string",
         "web2": "string",
         "web3": "string",
         "web4": "string",
         "web5": "string",
+        "web5-1": "string",
+        "web5-2": "string",
         "web6": "string",
         "web7": "string",
-        "web8": "string"
+        "web8": "string",
+        "web9": "string"
       }
     ],
     "value": {
       "web1": "172.20.1.127",
       "web1-1": "172.20.1.34",
+      "web10": "172.20.1.39",
+      "web11": "172.20.1.124",
+      "web12": "172.20.1.100",
+      "web13": "172.20.1.138",
       "web2": "172.20.1.140",
-      "web3": "172.20.1.118",
-      "web4": "172.20.1.48",
-      "web5": "172.20.1.99",
+      "web3": "172.20.1.87",
+      "web4": "172.20.1.125",
+      "web5": "172.20.1.75",
+      "web5-1": "172.20.1.82",
+      "web5-2": "172.20.1.165",
       "web6": "172.20.1.83",
       "web7": "172.20.1.79",
-      "web8": "172.20.1.20"
+      "web8": "172.20.1.20",
+      "web9": "172.20.1.111"
     }
   },
   "dev_vm_storage_summary": {
@@ -704,6 +1502,42 @@
           }
         ],
         "web1-1": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web10": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web11": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web12": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web13": [
           "object",
           {
             "boot_volume_size": "number",
@@ -748,6 +1582,24 @@
             "vm_name": "string"
           }
         ],
+        "web5-1": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
+        "web5-2": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
+        ],
         "web6": [
           "object",
           {
@@ -774,6 +1626,15 @@
             "total_storage": "number",
             "vm_name": "string"
           }
+        ],
+        "web9": [
+          "object",
+          {
+            "boot_volume_size": "number",
+            "data_volumes_total_size": "number",
+            "total_storage": "number",
+            "vm_name": "string"
+          }
         ]
       }
     ],
@@ -789,6 +1650,30 @@
         "data_volumes_total_size": 0,
         "total_storage": 50,
         "vm_name": "jenkins-agent"
+      },
+      "web10": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 140,
+        "total_storage": 190,
+        "vm_name": "minio-worker"
+      },
+      "web11": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 140,
+        "total_storage": 190,
+        "vm_name": "minio-worker-2"
+      },
+      "web12": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 140,
+        "total_storage": 190,
+        "vm_name": "minio-worker-3"
+      },
+      "web13": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 140,
+        "total_storage": 190,
+        "vm_name": "minio-worker-4"
       },
       "web2": {
         "boot_volume_size": 50,
@@ -814,6 +1699,18 @@
         "total_storage": 250,
         "vm_name": "harbor-worker-2"
       },
+      "web5-1": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "harbor-lb"
+      },
+      "web5-2": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 200,
+        "total_storage": 250,
+        "vm_name": "harbor-worker-3"
+      },
       "web6": {
         "boot_volume_size": 50,
         "data_volumes_total_size": 0,
@@ -831,6 +1728,12 @@
         "data_volumes_total_size": 0,
         "total_storage": 50,
         "vm_name": "argo-cd"
+      },
+      "web9": {
+        "boot_volume_size": 50,
+        "data_volumes_total_size": 0,
+        "total_storage": 50,
+        "vm_name": "minio-master"
       }
     }
   },
